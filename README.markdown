@@ -1,4 +1,4 @@
-# JSKoans - koans to learn Javascript (the good bits) #
+# Javascript Koans - koans to learn Javascript (the good bits) #
 
 Based on Edgecase's fantastic 
 [Ruby koans](http://github.com/edgecase/ruby_koans), the goal of the
