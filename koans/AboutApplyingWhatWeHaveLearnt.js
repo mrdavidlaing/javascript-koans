@@ -32,11 +32,11 @@ describe("About Applying What We Have Learnt", function() {
       return hasInvalidOperation;
     };
     
-    expect(__).toBe(findNeedle(operations));
+    expect(findNeedle(operations)).toBe(__);
   });
 
   it("should find needle in a haystack (functional)", function () {
-    expect(__).toBe(df.some(operations, "x.direction === 'FWD' && x.distance > 100"));    
+    expect(df.some(operations, "x.direction === 'FWD' && x.distance > 100")).toBe(__); 
   });
 
   /*********************************************************************************/
@@ -50,7 +50,7 @@ describe("About Applying What We Have Learnt", function() {
       }
     }
     
-    expect(__).toBe(sum);
+    expect(sum).toBe(__);
   });
 
   it("should add all the natural numbers below 1000 that are multiples of 3 or 5 (functional)", function () {
@@ -62,7 +62,7 @@ describe("About Applying What We Have Learnt", function() {
     };
     var numbers = df.repeat(1000, "+1", 1);
 
-    expect(__).toBe(df.reduce(numbers, sumIfMultipleOf3Or5, 0));
+    expect(df.reduce(numbers, sumIfMultipleOf3Or5, 0)).toBe(__);
   });
 
   /*********************************************************************************/
@@ -81,7 +81,7 @@ describe("About Applying What We Have Learnt", function() {
       i+=1;
     } while (currentFib < 4000000);
     
-    expect(__).toBe(sum);
+    expect(sum).toBe(__);
   });
 
   it("should find the sum of all the even valued terms in the fibonacci sequence which do not exceed four million (functional)", function () {
@@ -97,7 +97,7 @@ describe("About Applying What We Have Learnt", function() {
     var fib = df.until("item[0] > 4000000", calcNextFibTuple, [0,1]);
     var sum = df.reduce(fib, addEven, 0);
     
-    expect(__).toBe(sum);
+    expect(sum).toBe(__);
   });
 
   /*********************************************************************************/

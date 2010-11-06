@@ -3,56 +3,56 @@ describe("About Arrays", function() {
   //We shall contemplate truth by testing reality, via spec expectations.  
   it("should create arrays", function() {
     var emptyArray = [];
-    expect(__).toBe(typeof(emptyArray)); //A mistake? - http:javascript.crockford.com/remedial.html
-    expect(__).toBe(emptyArray.length);
+    expect(typeof(emptyArray)).toBe(__); //A mistake? - http:javascript.crockford.com/remedial.html
+    expect(emptyArray.length).toBe(__);
 
     var multiTypeArray = [0, 1, "two", function () { return 3; }, {value1: 4, value2: 5}, [6, 7]];
-    expect(__).toBe(multiTypeArray[0]);
-    expect(__).toBe(multiTypeArray[2]);
-    expect(__).toBe(multiTypeArray[3]());
-    expect(__).toBe(multiTypeArray[4].value1);
-    expect(__).toBe(multiTypeArray[4]["value2"]);
-    expect(__).toBe(multiTypeArray[5][0]);
+    expect(multiTypeArray[0]).toBe(__);
+    expect(multiTypeArray[2]).toBe(__);
+    expect(multiTypeArray[3]()).toBe(__);
+    expect(multiTypeArray[4].value1).toBe(__);
+    expect(multiTypeArray[4]["value2"]).toBe(__);
+    expect(multiTypeArray[5][0]).toBe(__);
   });
 
   it("should understand array literals", function () {
     var array = [];
-    expect([]).toEqual(array);
+    expect(array).toEqual([]);
     
     array[0] = 1;
-    expect([1]).toEqual(array);
+    expect(array).toEqual([1]);
     
     array[1] = 2;
-    expect([1, __]).toEqual(array);
+    expect(array).toEqual([1, __]);
     
     array.push(3);
-    expect(__).toEqual(array);
+    expect(array).toEqual(__);
   });
 
   it("should understand array length", function () {
     var fourNumberArray = [1, 2, 3, 4];
 
-    expect(__).toBe(fourNumberArray.length);
+    expect(fourNumberArray.length).toBe(__);
     fourNumberArray.push(5, 6);
-    expect(__).toBe(fourNumberArray.length);
+    expect(fourNumberArray.length).toBe(__);
 
     var tenEmptyElementArray = new Array(10); 
-    expect(__).toBe(tenEmptyElementArray.length);
+    expect(tenEmptyElementArray.length).toBe(__);
 
     tenEmptyElementArray.length = 5;
-    expect(__).toBe(tenEmptyElementArray.length);
+    expect(tenEmptyElementArray.length).toBe(__);
   });
 
   it("should slice arrays", function () {
     var array = ["peanut", "butter", "and", "jelly"];
     
-    expect(__).toEqual(array.slice(0, 1));
-    expect(__).toEqual(array.slice(0, 2));
-    expect(__).toEqual(array.slice(2, 2));
-    expect(__).toEqual(array.slice(2, 20));
-    expect(__).toEqual(array.slice(3, 0));
-    expect(__).toEqual(array.slice(3, 100));
-    expect(__).toEqual(array.slice(5, 1));
+    expect(array.slice(0, 1)).toEqual(__);
+    expect(array.slice(0, 2)).toEqual(__);
+    expect(array.slice(2, 2)).toEqual(__);
+    expect(array.slice(2, 20)).toEqual(__);
+    expect(array.slice(3, 0)).toEqual(__);
+    expect(array.slice(3, 100)).toEqual(__);
+    expect(array.slice(5, 1)).toEqual(__);
   });
 
   it("should know array references", function () {
@@ -62,36 +62,36 @@ describe("About Arrays", function() {
         refArray[1] = "changed in function";
     }
     passedByReference(array);
-    expect(__).toBe(array[1]);
+    expect(array[1]).toBe(__);
 
     var assignedArray = array;
     assignedArray[5] = "changed in assignedArray";
-    expect(__).toBe(array[5]);
+    expect(array[5]).toBe(__);
 
     var copyOfArray = array.slice();
     copyOfArray[3] = "changed in copyOfArray";
-    expect(__).toBe(array[3]);
+    expect(array[3]).toBe(__);
   });
 
   it("should push and pop", function () {
     var array = [1, 2];
     array.push(3);
 
-    expect(__).toEqual(array);
+    expect(array).toEqual(__);
     
     var poppedValue = array.pop();
-    expect(__).toBe(poppedValue);
-    expect(__).toEqual(array);
+    expect(poppedValue).toBe(__);
+    expect(array).toEqual(__);
   });
 
   it("should shifting arrays", function () {
     var array = [1, 2];
 
     array.unshift(3);
-    expect(__).toEqual(array);
+    expect(array).toEqual(__);
     
     var shiftedValue = array.shift();
-    expect(__).toEqual(shiftedValue);
-    expect(__).toEqual(array);
+    expect(shiftedValue).toEqual(__);
+    expect(array).toEqual(__);
   });  
 });

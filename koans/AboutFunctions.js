@@ -6,8 +6,7 @@ describe("About Functions", function() {
       return a + b;
     }
     
-    expect(__).toBe(add(1, 2));
-
+    expect(add(1, 2)).toBe(__);
   });
 
   it("should know internal wariables override outer variables", function () {
@@ -22,9 +21,9 @@ describe("About Functions", function() {
       return message;
     }
     
-    expect(__).toBe(getMessage());
-    expect(__).toBe(overrideMessage());
-    expect(__).toBe(message);
+    expect(getMessage()).toBe(__);
+    expect(overrideMessage()).toBe(__);
+    expect(message).toBe(__);
   });
 
   it("should have lexical scoping", function () {
@@ -36,7 +35,7 @@ describe("About Functions", function() {
       }
       return childfunction();
     }
-    expect(__).toBe(parentfunction());
+    expect(parentfunction()).toBe(__);
   });
 
   it("should use lexical scoping to synthesise functions", function () {
@@ -53,7 +52,7 @@ describe("About Functions", function() {
     var increaseBy3 = makeIncreaseByFunction(3);
     var increaseBy5 = makeIncreaseByFunction(5);
     
-    expect(__).toBe(increaseBy3(10) + increaseBy5(10));
+    expect(increaseBy3(10) + increaseBy5(10)).toBe(__);
   });
 
   it("should allow extra function arguments", function () {
@@ -63,14 +62,14 @@ describe("About Functions", function() {
       return firstArg;
     }
     
-    expect(__).toBe(returnFirstArg("first", "second", "third"));
+    expect(returnFirstArg("first", "second", "third")).toBe(__);
     
     function returnSecondArg(firstArg, secondArg)
     {
       return secondArg;
     }
     
-    expect(__).toBe(returnSecondArg("only give first arg"));
+    expect(returnSecondArg("only give first arg")).toBe(__);
     
     function returnAllArgs()
     {
@@ -81,7 +80,7 @@ describe("About Functions", function() {
       return argsArray.join(",");
     }
     
-    expect(__).toBe(returnAllArgs("first", "second", "third"));
+    expect(returnAllArgs("first", "second", "third")).toBe(__);
   });
 
   it("should pass functions as values", function () {
@@ -95,21 +94,21 @@ describe("About Functions", function() {
     };
     
     var praiseSinger = { givePraise: appendRules };
-    expect(__).toBe(praiseSinger.givePraise("John"));
+    expect(praiseSinger.givePraise("John")).toBe(__);
     
     praiseSinger.givePraise = appendDoubleRules;
-    expect(__).toBe(praiseSinger.givePraise("Mary"));
+    expect(praiseSinger.givePraise("Mary")).toBe(__);
       
   });
 
   it("should use function body as a string", function () {
     var add = new Function("a", "b", "return a + b;");
-    expect(__).toBe(add(1, 2));
+    expect(add(1, 2)).toBe(__);
      
     var multiply = function (a, b) {
       //An internal comment
       return a * b;
     };
-    expect(__).toBe(multiply.toString());
+    expect(multiply.toString()).toBe(__);
   });    
 });
