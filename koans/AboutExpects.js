@@ -10,7 +10,7 @@ describe("About Expects", function() {
 	  var expectedValue = __;
 	  var actualValue = 1 + 1;
 	
-	  expect(expectedValue === actualValue).toBeTruthy();
+	  expect(actualValue === expectedValue).toBeTruthy();
   });  
 
   //Some ways of asserting equality are better than others.
@@ -33,6 +33,6 @@ describe("About Expects", function() {
 
   //Sometimes we will ask you to fill in the values
   it("should have filled in values", function () {
-	  expect(__).toEqual(1 + 1);
+	  expect(1 + 1).toEqual(__);
   });
 });
