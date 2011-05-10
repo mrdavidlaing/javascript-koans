@@ -18,20 +18,20 @@ describe("About Expects", function() {
 	  var expectedValue = __;
 	  var actualValue = 1 + 1;
 	
-    // toEqual() compares using common sense equality
+  // toEqual() compares using common sense equality.
 	  expect(actualValue).toEqual(expectedValue);
   });
 
-  //Sometime you need to be really exact
+  //Sometimes you need to be really exact about what you "type".
   it("should assert equality with ===", function () { 
 	  var expectedValue = __;
-	  var actualValue = 1 + 1;
+	  var actualValue = (1 + 1).toString();
 	
-    // toBe() will always use === to compare
+  // toBe() will always use === to compare.
 	  expect(actualValue).toBe(expectedValue);
   });  
 
-  //Sometimes we will ask you to fill in the values
+  //Sometimes we will ask you to fill in the values.
   it("should have filled in values", function () {
 	  expect(1 + 1).toEqual(__);
   });

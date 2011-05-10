@@ -15,7 +15,7 @@ describe("About Lambdas", function () {
       expect(df.lambda("x, y -> y*2 + x*3")(2, 3)).toBe(__);
   });
     
-  it("should demonstrate a string passed to higher order functions assumed to be lambdas", function () {
+  it("should demonstrate a string passed to higher order functions assumed to be a lambda", function () {
       expect(df.map([1, 2, 3], "x + 1")).toEqual(__);
   });
 

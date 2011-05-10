@@ -53,7 +53,7 @@ describe("About Higher Order Functions", function () {
     expect(msg).toEqual(__);
   });
     
-  it("should use 'every' to applies until first false" , function () {
+  it("should use 'every' to apply until first false" , function () {
     var numbers = [1,2,3];
     var msg = "";
     var isEven = function (item) {
