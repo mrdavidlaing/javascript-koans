@@ -63,7 +63,7 @@ Gonzo.prototype = Muppet.prototype.beget();
 
 describe("About Crockford's inheritance improvement", function() {
   beforeEach(function(){
-	this.gonzo = new Gonzo(3, "daredevil performer", "eat a tire");
+  this.gonzo = new Gonzo(3, "daredevil performer", "eat a tire");
   });
   
   it("should be able to call a method on the derived object", function() {
@@ -76,7 +76,7 @@ describe("About Crockford's inheritance improvement", function() {
   
   it("should set constructor parameters on the base object", function() {
     expect(this.gonzo.age).toEqual(__);
-    expect(this.gonzo.hobby).toEqual(__);	
+    expect(this.gonzo.hobby).toEqual(__);
   });
   
   it("should set constructor parameters on the derived object", function() {

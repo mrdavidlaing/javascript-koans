@@ -9,7 +9,7 @@ describe("About Functions", function() {
     expect(add(1, 2)).toBe(__);
   });
 
-  it("should know internal wariables override outer variables", function () {
+  it("should know internal variables override outer variables", function () {
     var message = "Outer";
     
     function getMessage() {
