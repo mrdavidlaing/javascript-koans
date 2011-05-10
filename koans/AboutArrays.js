@@ -84,7 +84,7 @@ describe("About Arrays", function() {
     expect(array).toEqual(__);
   });
 
-  it("should shifting arrays", function () {
+  it("should know about shifting arrays", function () {
     var array = [1, 2];
 
     array.unshift(3);
