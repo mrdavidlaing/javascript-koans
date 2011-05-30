@@ -8,12 +8,12 @@ describe("About Objects", function () {
     });
 
     it("should confirm objects are collections of properties", function () {
-      expect(meglomaniac.mastermind).toBe(__);
+      expect(meglomaniac.mastermind).toBe(FILL_ME_IN);
     }); 
 
     it("should confirm that properties are case sensitive", function () {
-      expect(meglomaniac.henchwoman).toBe(__);
-      expect(meglomaniac.henchWoman).toBe(__);
+      expect(meglomaniac.henchwoman).toBe(FILL_ME_IN);
+      expect(meglomaniac.henchWoman).toBe(FILL_ME_IN);
     });
   });
   
@@ -29,7 +29,7 @@ describe("About Objects", function () {
     };
    
     battleCry = meglomaniac.battleCry(4);
-    expect(__).toMatch(battleCry);
+    expect(FILL_ME_IN).toMatch(battleCry);
   });
 
   it("should confirm that when a function is attached to an object, 'this' refers to the object", function () {
@@ -44,8 +44,8 @@ describe("About Objects", function () {
       }
     };
    
-    expect(currentYear).toBe(__);
-    expect(meglomaniac.calculateAge()).toBe(__);
+    expect(currentYear).toBe(FILL_ME_IN);
+    expect(meglomaniac.calculateAge()).toBe(FILL_ME_IN);
   });
 
   describe("'in' keyword", function () {
@@ -62,27 +62,27 @@ describe("About Objects", function () {
 
       hasBomb = "theBomb" in meglomaniac;
      
-      expect(hasBomb).toBe(__);
+      expect(hasBomb).toBe(FILL_ME_IN);
     });
 
     it("should not have the detonator however", function () {
 
       hasDetonator = "theDetonator" in meglomaniac;
      
-      expect(hasDetonator).toBe(__);
+      expect(hasDetonator).toBe(FILL_ME_IN);
     });    
   });
 
   it("should know that properties can be added and deleted", function () {
     var meglomaniac = { mastermind : "Agent Smith", henchman: "Agent Smith" };
 
-    expect("secretary" in meglomaniac).toBe(__);
+    expect("secretary" in meglomaniac).toBe(FILL_ME_IN);
 
     meglomaniac.secretary = "Agent Smith";
-    expect("secretary" in meglomaniac).toBe(__);
+    expect("secretary" in meglomaniac).toBe(FILL_ME_IN);
     
     delete meglomaniac.henchman;
-    expect("henchman" in meglomaniac).toBe(__);
+    expect("henchman" in meglomaniac).toBe(FILL_ME_IN);
   });
 
 
@@ -96,14 +96,14 @@ describe("About Objects", function () {
       var colouredCircle = new Circle(5);
       colouredCircle.colour = "red";
       
-      expect(simpleCircle.colour).toBe(__);
-      expect(colouredCircle.colour).toBe(__);
+      expect(simpleCircle.colour).toBe(FILL_ME_IN);
+      expect(colouredCircle.colour).toBe(FILL_ME_IN);
     
       Circle.prototype.describe = function () {
         return "This circle has a radius of: " + this.radius;
       };
     
-      expect(simpleCircle.describe()).toBe(__);
-      expect(colouredCircle.describe()).toBe(__);
+      expect(simpleCircle.describe()).toBe(FILL_ME_IN);
+      expect(colouredCircle.describe()).toBe(FILL_ME_IN);
   });
 });
