@@ -1,42 +1,47 @@
-var dojox; //globals
-var df = dojox.lang.functional;   
+var _; //globals
 
 describe("About Applying What We Have Learnt", function() {
 
-  var operations;
+  var products;
 
   beforeEach(function () { 
-    operations = [
-                   { direction: "RT", distance: 200},
-                   { direction: "FWD", distance: 50},
-                   { direction: "RT", distance: 100},
-                   { direction: "RT", distance: 20},
-                   { direction: "FWD", distance: 200},
-                   { direction: "RT", distance: 10}
-                ]
+    products = [
+       { name: "Sonoma", ingredients: ["artichoke", "sundried tomatoes", "mushrooms"], containsNuts: false },
+       { name: "Pizza Primavera", ingredients: ["roma", "sundried tomatoes", "goats cheese", "rosemary"], containsNuts: false },
+       { name: "South Of The Border", ingredients: ["black beans", "jalapenos", "mushrooms"], containsNuts: false },
+       { name: "Blue Moon", ingredients: ["blue cheese", "garlic", "walnuts"], containsNuts: true },
+       { name: "Taste Of Athens", ingredients: ["spinach", "kalamata olives", "sesame seeds"], containsNuts: true }
+    ];
   });
 
   /*********************************************************************************/
 
-  it("should find a needle in a haystack (imperative)", function () {
-    
-    var findNeedle = function (ops) {
-      var hasInvalidOperation = false;
-      for (var i = 0; i < ops.length; i+=1) { 
-        if (ops[i].direction === "FWD" && ops[i].distance > 100) { 
-          hasInvalidOperation = true; 
-          break; 
-        }	
-      }
+  it("given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (imperative)", function () {
 
-      return hasInvalidOperation;
-    };
-    
-    expect(findNeedle(operations)).toBe(__);
+    var i,j,hasMushrooms, productsICanEat = [];
+
+    for (i = 0; i < products.length; i+=1) {
+        if (products[i].containsNuts === false) {
+            hasMushrooms = false;
+            for (j = 0; j < products[i].ingredients.length; j+=1) {
+               if (products[i].ingredients[j] === "mushrooms") {
+                  hasMushrooms = true;
+               }
+            }
+            if (!hasMushrooms) productsICanEat.push(products[i]);
+        }
+    }
+
+    expect(productsICanEat.length).toBe(__);
   });
 
-  it("should find needle in a haystack (functional)", function () {
-    expect(df.some(operations, "x.direction === 'FWD' && x.distance > 100")).toBe(__); 
+  it("given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (functional)", function () {
+
+      var productsICanEat = [];
+
+      /* solve using filter() & all() / any() */
+
+      expect(productsICanEat.length).toBe(__);
   });
 
   /*********************************************************************************/
@@ -54,50 +59,31 @@ describe("About Applying What We Have Learnt", function() {
   });
 
   it("should add all the natural numbers below 1000 that are multiples of 3 or 5 (functional)", function () {
-    var sumIfMultipleOf3Or5 = function (sum, next) {
-      if (next % 3 === 0 || next % 5 === 0) {
-        return sum + next;
-      }
-      return sum;	
-    };
-    var numbers = df.repeat(1000, "+1", 1);
 
-    expect(df.reduce(numbers, sumIfMultipleOf3Or5, 0)).toBe(__);
+    var sum = __;    /* try chaining range() and reduce() */
+
+    expect(234168).toBe(__);
   });
 
   /*********************************************************************************/
+   it("should count the ingredient occurrence (imperative)", function () {
+    var ingredientCount = { "{ingredient name}": 0 };
 
-  it("should find the sum of all the even valued terms in the fibonacci sequence which do not exceed four million (imperative)", function () {
-    var sum = 0;
-    var fib = [0,1,1];
-    var i = 3;	
-    var currentFib = 0;
-    
-    do {
-      currentFib = fib[i] = fib[i-1] + fib[i-2];
-      if (currentFib % 2 === 0) {
-        sum += currentFib;
-      }
-      i+=1;
-    } while (currentFib < 4000000);
-    
-    expect(sum).toBe(__);
+    for (i = 0; i < products.length; i+=1) {
+        for (j = 0; j < products[i].ingredients.length; j+=1) {
+            ingredientCount[products[i].ingredients[j]] = (ingredientCount[products[i].ingredients[j]] || 0) + 1;
+        }
+    }
+
+    expect(ingredientCount['mushrooms']).toBe(__);
   });
 
-  it("should find the sum of all the even valued terms in the fibonacci sequence which do not exceed four million (functional)", function () {
-    var calcNextFibTuple = function(item, index, array) {
-      return [item[1], item[0]+item[1]];
-    };
-    var addEven = function(result, item) {
-      if (item[0]  % 2 === 0) { 
-        return result + item[0];
-      }
-      return result;
-    };
-    var fib = df.until("item[0] > 4000000", calcNextFibTuple, [0,1]);
-    var sum = df.reduce(fib, addEven, 0);
-    
-    expect(sum).toBe(__);
+  it("should count the ingredient occurrence (functional)", function () {
+    var ingredientCount = { "{ingredient name}": 0 };
+
+    /* chain() together map(), flatten() and reduce() */
+
+    expect(ingredientCount['mushrooms']).toBe(__);
   });
 
   /*********************************************************************************/

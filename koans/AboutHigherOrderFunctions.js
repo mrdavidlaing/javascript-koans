@@ -1,11 +1,15 @@
-var dojox; //globals
-var df = dojox.lang.functional;    
+var _; //globals
 
+/* This section uses a functional extension known as Underscore.js - http://documentcloud.github.com/underscore/
+     "Underscore is a utility-belt library for JavaScript that provides a lot of the functional programming support
+      that you would expect in Prototype.js (or Ruby), but without extending any of the built-in JavaScript objects.
+      It's the tie to go along with jQuery's tux."
+ */
 describe("About Higher Order Functions", function () {
 
   it("should use filter to return array items that meet a criteria", function () {
     var numbers = [1,2,3];
-    var odd = df.filter(numbers, "x % 2 !== 0");
+    var odd = _(numbers).filter(function (x) { return x % 2 !== 0 });
     
     expect(odd).toEqual(__);
     expect(odd.length).toBe(__);
@@ -14,17 +18,18 @@ describe("About Higher Order Functions", function () {
     
   it("should use 'map' to transform each element", function () {
     var numbers = [1, 2, 3];
-    var numbersPlus1 = df.map(numbers, "x + 1");
+    var numbersPlus1 = _(numbers).map(function(x) { return x + 1 });
     
     expect(numbersPlus1).toEqual(__);
     expect(numbers).toEqual(__);
   });
     
-  it("should use 'reduce' to update the same result on each iteration ", function () {
+  it("should use 'reduce' to update the same result on each iteration", function () {
     var numbers = [1, 2, 3];
-    var reduction = df.reduce(numbers, "result + x");
+    var reduction = _(numbers).reduce(
+            function(/* result from last call */ memo, /* current */ x) { return memo + x }, /* initial */ 0);
     
-    expect(reduction).toBe(__); 
+    expect(reduction).toBe(__);
     expect(numbers).toEqual(__);
   });
     
@@ -35,34 +40,51 @@ describe("About Higher Order Functions", function () {
       msg += (item % 2) === 0;
     };
 
-    df.forEach(numbers, isEven);
+    _(numbers).forEach(isEven);
     
     expect(msg).toEqual(__);
     expect(numbers).toEqual(__);
   });
     
-  it("should use 'some' to apply until true", function () {
-    var numbers = [1,2,3];
-    var msg = "";
-    var isEven = function (item) {
-      msg += item + ";";
-      return (item % 2) === 0;
-    };
-   
-    expect(numbers.some(isEven)).toBeTruthy();
-    expect(msg).toEqual(__);
+  it("should use 'all' to test whether all items pass condition", function () {
+    var onlyEven = [2,4,6];
+    var mixedBag = [2,4,5,6];
+
+    var isEven = function(x) { return x % 2 === 0 };
+
+    expect(_(onlyEven).all(isEven)).toBe(__);
+    expect(_(mixedBag).all(isEven)).toBe(__);
   });
     
-  it("should use 'every' to apply until first false" , function () {
-    var numbers = [1,2,3];
-    var msg = "";
-    var isEven = function (item) {
-      msg += item + ";";
-      return (item % 2) === 0;
-    };
-    
-    expect(numbers.every(isEven)).toBeFalsy();
-    expect(msg).toBe(__);
+  it("should use 'any' to test if any items passes condition" , function () {
+    var onlyEven = [2,4,6];
+    var mixedBag = [2,4,5,6];
+
+    var isEven = function(x) { return x % 2 === 0 };
+
+    expect(_(onlyEven).any(isEven)).toBe(__);
+    expect(_(mixedBag).any(isEven)).toBe(__);
   });
+
+  it("should use range to generate an array", function() {
+      expect(_.range(3)).toEqual(__);
+      expect(_.range(1, 4)).toEqual(__);
+      expect(_.range(0, -4, -1)).toEqual(__);
+  });
+
+  it("should use flatten to make nested arrays easy to work with", function() {
+      expect(_([ [1, 2], [3, 4] ]).flatten()).toEqual(__);
+  });
+
+  it("should use chain() ... .value() to use multiple higher order functions", function() {
+      var result = _([ [0, 1], 2 ]).chain()
+                       .flatten()
+                       .map(function(x) { return x+1 } )
+                       .reduce(function (sum, x) { return sum + x })
+                       .value();
+
+      expect(result).toEqual(__);
+  });
+
 });
 
