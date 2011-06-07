@@ -1,0 +1,89 @@
+body {
+    background: #222;
+    color: #FFF;
+    font-family: Helvetica, Arial;
+    font-size: 16px;
+}
+
+textarea, #pre {
+    font-size: 16px;
+    width: 100%;
+    height: 425px;
+    font-family: Monaco, Courier New;
+    background: #000;
+    color: #FFF;
+    overflow: auto;
+    margin: 0;
+    border: 0;
+    padding: 0 0 0 5px;
+}
+
+#container, #pre {
+    position: absolute;
+    top: 30px;
+    width: 100%;
+}
+
+textarea {
+    z-index: 1;
+}
+
+#pre {
+    z-index: 2;
+}
+
+#area {
+    position: absolute;
+    top: 30px;
+    left: 1%;
+    width: 98%;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+h3.large {
+    position: absolute;
+    top: 45%;
+    left: 0;
+    width: 100%;
+    font-size: 48px;
+    text-align: center;
+}
+
+div.buttons {
+    position: absolute;
+    top: 0px;
+    right: 5px;
+}
+
+input.run {
+    font-weight: bold;
+}
+
+a {
+    color: #EEE;
+    text-decoration: none;
+    border-bottom: 1px solid #EEE;
+}
+
+.FAIL b, .ERROR b {
+    color: red; /* #990066 */
+}
+
+.PASS b {
+    color: #73C836;
+}
+
+#results {
+    line-height: 1.3em;
+    font-size: 18px;
+    background: #222;
+    z-index: 10;
+}
+
+#cite {
+    font-size: 12px;
+    text-align:right;
+}

@@ -1,0 +1,252 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Learning Advanced JavaScript</title>
+    <link href="lib/presentation/presentation.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="lib/presentation/recipes.css">
+    <script src="lib/presentation/jquery.js"></script>
+    <script src="lib/presentation/jquery.chili.js"></script>
+    <script src="lib/presentation/recipes.js"></script>
+    <script src="lib/presentation/presentation.js"></script>
+
+    <script type="text/javascript" src="lib/underscore-min.js"></script>
+    <script type="text/javascript" src="lib/FILL_ME_IN.js"></script>
+
+    <script>
+        function assert(pass, msg) {
+            var type = pass ? "PASS" : "FAIL";
+            var karma = pass ? "Your awareness has been expanded": "Your karma is being damaged...";
+            jQuery("#results").append("<li class='" + type + "'><b>" + karma + "</b> " + msg + "</li>");
+        }
+        function error(msg) {
+            jQuery("#results").append("<li class='ERROR'><b>Your karma is being damaged...</b> " + msg + "</li>");
+        }
+        function log() {
+            var msg = "";
+            for (var i = 0; i < arguments.length; i++) {
+                msg += " " + arguments[i];
+            }
+            jQuery("#results").append("<li class='LOG'><b>LOG</b> " + msg + "</li>");
+        }
+    </script>
+</head>
+<body>
+
+<h3 class="">Javascript function programming koans</h3>
+
+<div id="area">
+    <pre id="pre" class="javascript" style="height: 425px; ">
+        <a href="#1">1) Our Goal</a>
+
+    </pre>
+    <form id="form">
+        <div class="buttons" style="display: none; ">
+            <input type="submit" value="Meditate" class="run" id="run">
+            <input type="button" id="prev" value="« Prev">
+            <input type="button" id="next" value="Next »">
+        </div>
+        <div id="container">
+            <textarea id="code" wrap="off" style="height: 425px; "></textarea>
+            <ol id="results"></ol>
+            <p id="cite">Double-click the code to edit the tutorial and try your own code.
+                <br>John Resig increased his karma by <a href="http://ejohn.org/apps/learn/">creating this tutorial framework</a></p>
+        </div>
+    </form>
+</div>
+
+<dl style="display: none; ">
+    <!-- Slide 1 -->
+    <dt>Our Goal</dt>
+    <dd></dd>
+
+    <!-- Slide 2 -->
+    <dt>Our Goal > Enlightenment through functional programming</dt>
+    <dd><pre>
+
+/*
+ *   Today we will expand our awareness of:
+ *
+ *   (1) First class functions
+ *
+ *   (2) Higher order functions and collections
+ *
+ *   (3) Continuations
+ *
+ *   by meditating on a series of koans
+*/
+    </pre></dd>
+
+    <!-- Slide 3 -->
+    <dt>What are these koans of which you speak master?</dt>
+    <dd><pre>
+//Koans help us contemplate truth by testing reality.
+assert(false, "This should be true" );
+
+//To understand reality, we must compare our assertions against reality.
+assert( ( 1 + 1 ) === FILL_ME_IN);
+
+/*
+ * Double click here to edit reality
+ *
+ * Then click [Meditate] to test whether you have gained enlightenment
+ */
+    </pre></dd>
+
+<!-- Slide 3 -->
+    <dt>How koans work (2)</dt>
+    <dd><pre>
+//Sometimes we just want to see what's going on
+var theAnswer = 6 * 7;
+log( "Just a simple log", "of", "values.", theAnswer );
+
+//And other times we want to avoid causing an error
+if (6 * 7 !== FILL_ME_IN ) {
+    error( "I'm an error!" );
+} else {
+    assert(true);
+}
+    </pre></dd>
+
+<!-- Slide 1 -->
+    <dt>First class functions</dt>
+    <dd></dd>
+
+    <!-- Slide 4 -->
+    <dt>Let us meditate on first class functions</dt>
+    <dd><pre>
+/*
+*  A language supports first-class functions when:
+*
+* (1) You can bind an identifier to the function,
+*     i.e. you can give it a name
+*
+* (2) You can store the function in a data structure (e.g: a list)
+*
+* (3) You can pass the function as an argument in another function call
+*
+* (4) You can return a function from another function
+*/
+    </pre></dd>
+
+<!-- Slide 5 -->
+<dt>Giving functions names</dt>
+<dd><pre>
+var add = function(x, y) {
+  return x + y;
+};
+
+var result = add(2, 3);
+assert(result === FILL_ME_IN, "Execute a named function using ()");
+
+var alsoAdd = add;
+
+assert(alsoAdd(1, 6) === FILL_ME_IN, "Named functions behave just like other variables");
+</pre></dd>
+
+<!-- Slide 6 -->
+<dt>Storing functions in data structures</dt>
+<dd><pre>
+var result = 0;
+
+var add = function(x, y) {
+  return x + y;
+};
+
+var subtract = function(x, y) {
+    return x - y;
+};
+
+var operations = [add, subtract, add, subtract, subtract, add, add];
+
+for (i in operations) {
+    result = operations[i](result,5);
+    // log("result is now:", result);
+}
+
+assert(result === FILL_ME_IN, "what is the final result?");
+</pre></dd>
+
+<!-- Slide 7 -->
+<dt>Passing a function as an argument to another function call</dt>
+<dd><pre>
+var afterMeditation = function(knowledge) {
+    assert(knowledge === FILL_ME_IN, "what knowledge has been accumulated");
+};
+
+var thinkLongAndHard = function(fact1, fact2, afterThinking) {
+    var result = fact1 + ';' + fact2;
+    afterThinking(result);
+};
+
+thinkLongAndHard('wind', 'rain', afterMeditation);
+</pre></dd>
+
+<!-- Slide 8 -->
+<dt>You can return a function from another function</dt>
+<dd><pre>
+var powerFactory = function(power) {
+        return function(number) {
+            var result = 1;
+            for(var i = 0; i < power; i++) {
+                result = result * number;
+            }
+            return result;
+        }
+    };
+
+var squared = powerFactory(2);
+var cubed = powerFactory(3);
+
+assert(squared(2) + cubed(3) === FILL_ME_IN, "functions can create new functions");
+</pre></dd>
+
+<!-- Slide 1 -->
+<dt>Higher order functions</dt>
+<dd></dd>
+
+<!-- Slide 9 -->
+<dt>First class functions make common operations with collections easy</dt>
+<dd><pre>
+/*
+ * The following are known as higher order functions:
+ *
+ * (1) each
+ * (2) map
+ * (3) filter
+ * (4) reduce
+ * (5) all
+ * (6) any
+ * (7) range
+ * (8) flatten
+ *
+ * because the apply a function to a list in a common way.
+ *
+*/
+</pre></dd>
+
+<!-- Slide 10 -->
+<dt>Each</dt>
+<dd><pre>
+/* Iterates over a list of elements, yielding each in turn to an iterator function. */
+    var numbers = [1,2,3];
+    var msg = "";
+    var isEven = function(item) {
+      msg += (item % 2) === 0;
+    };
+
+    _.each(numbers, isEven);
+
+    assert(msg === FILL_ME_IN, "isEven was called once for each element");
+    assert(numbers === FILL_ME_IN, "but the original list wasn't touched");
+</pre></dd>
+
+
+<!-- Slide 9 -->
+<dt>Continuations</dt>
+<dd><pre>
+/*TODO*/
+</pre></dd>
+
+</dl>
+</body>
+</html>
