@@ -36,8 +36,7 @@
 
 <div id="area">
     <pre id="pre" class="javascript" style="height: 425px; ">
-        <a href="#1">1) Our Goal</a>
-
+        /* TOC goes here */
     </pre>
     <form id="form">
         <div class="buttons" style="display: none; ">
@@ -92,8 +91,8 @@ assert( ( 1 + 1 ) === FILL_ME_IN);
  */
     </pre></dd>
 
-<!-- Slide 3 -->
-    <dt>How koans work (2)</dt>
+<!-- Slide 4 -->
+    <dt>More on how koans work...</dt>
     <dd><pre>
 //Sometimes we just want to see what's going on
 var theAnswer = 6 * 7;
@@ -107,7 +106,7 @@ if (6 * 7 !== FILL_ME_IN ) {
 }
     </pre></dd>
 
-<!-- Slide 1 -->
+<!-- Slide 5 -->
     <dt>First class functions</dt>
     <dd></dd>
 
@@ -128,7 +127,7 @@ if (6 * 7 !== FILL_ME_IN ) {
 */
     </pre></dd>
 
-<!-- Slide 5 -->
+<!-- Slide 6 -->
 <dt>Giving functions names</dt>
 <dd><pre>
 var add = function(x, y) {
@@ -143,7 +142,7 @@ var alsoAdd = add;
 assert(alsoAdd(1, 6) === FILL_ME_IN, "Named functions behave just like other variables");
 </pre></dd>
 
-<!-- Slide 6 -->
+<!-- Slide 7 -->
 <dt>Storing functions in data structures</dt>
 <dd><pre>
 var result = 0;
@@ -166,7 +165,7 @@ for (i in operations) {
 assert(result === FILL_ME_IN, "what is the final result?");
 </pre></dd>
 
-<!-- Slide 7 -->
+<!-- Slide 8 -->
 <dt>Passing a function as an argument to another function call</dt>
 <dd><pre>
 var afterMeditation = function(knowledge) {
@@ -181,7 +180,7 @@ var thinkLongAndHard = function(fact1, fact2, afterThinking) {
 thinkLongAndHard('wind', 'rain', afterMeditation);
 </pre></dd>
 
-<!-- Slide 8 -->
+<!-- Slide 9 -->
 <dt>You can return a function from another function</dt>
 <dd><pre>
 var powerFactory = function(power) {
@@ -200,11 +199,11 @@ var cubed = powerFactory(3);
 assert(squared(2) + cubed(3) === FILL_ME_IN, "functions can create new functions");
 </pre></dd>
 
-<!-- Slide 1 -->
+<!-- Slide 10 -->
 <dt>Higher order functions</dt>
 <dd></dd>
 
-<!-- Slide 9 -->
+<!-- Slide 11 -->
 <dt>First class functions make common operations with collections easy</dt>
 <dd><pre>
 /*
@@ -219,15 +218,18 @@ assert(squared(2) + cubed(3) === FILL_ME_IN, "functions can create new functions
  * (7) range
  * (8) flatten
  *
- * because the apply a function to a list in a common way.
+ * because they apply a function to a list in a common way.
+ * (We use the underscore.js library to ensure these are
+ *  applied consistently across all browsers)
  *
 */
 </pre></dd>
 
-<!-- Slide 10 -->
+<!-- Slide 12 -->
 <dt>Each</dt>
 <dd><pre>
 /* Iterates over a list of elements, yielding each in turn to an iterator function. */
+
     var numbers = [1,2,3];
     var msg = "";
     var isEven = function(item) {
@@ -240,11 +242,172 @@ assert(squared(2) + cubed(3) === FILL_ME_IN, "functions can create new functions
     assert(numbers === FILL_ME_IN, "but the original list wasn't touched");
 </pre></dd>
 
-
-<!-- Slide 9 -->
-<dt>Continuations</dt>
+<!-- Slide 13 -->
+<dt>Map</dt>
 <dd><pre>
-/*TODO*/
+/* Produces a new array of values by mapping each value in list through a transformation function (iterator). */
+
+    var numbers = [1, 2, 3];
+    var numbersPlus1 = _.map(numbers, function(x) { return x + 1 });
+
+    assert(numbersPlus1 === FILL_ME_IN, "each element is the result of the function applied to the original list");
+    assert(numbers === FILL_ME_IN, "but the original list wasn't touched");
+</pre></dd>
+
+<!-- Slide 14 -->
+<dt>Filter</dt>
+<dd><pre>
+/* Looks through each value in the list, returning an array of all the values that pass a truth test (iterator) */
+
+    var numbers = [1,2,3];
+    var odd = _(numbers).filter(function (x) { return x % 2 !== 0 });
+
+    assert(odd === FILL_ME_IN, "should only contain odd");
+    assert(numbers === FILL_ME_IN, "but the original list isn't touched");
+</pre></dd>
+
+<!-- Slide 15 -->
+<dt>Reduce</dt>
+<dd><pre>
+/* Reduce boils down a list of values into a single value. */
+
+    var numbers = [1, 2, 3];
+    var reduction = _(numbers).reduce(
+            function(/* result from last call */ memo, /* current */ x) { return memo + x }, /* initial */ 0);
+
+    assert(reduction === FILL_ME_IN, "should be the cumulative sum");
+    assert(numbers === FILL_ME_IN, "but the original list isn't touched");
+</pre></dd>
+
+<!-- Slide 16 -->
+<dt>All</dt>
+<dd><pre>
+/* Returns true if all of the values in the list pass the iterator truth test */
+
+    var onlyEven = [2,4,6];
+    var mixedBag = [2,4,5,6];
+
+    var isEven = function(x) { return x % 2 === 0 };
+
+    assert(_(onlyEven).all(isEven) === FILL_ME_IN, "are _all_ of the list items even?");
+    assert(_(mixedBag).all(isEven) === FILL_ME_IN, "leave the original list alone!");
+</pre></dd>
+
+<!-- Slide 17 -->
+<dt>Any</dt>
+<dd><pre>
+/* Returns true if any of the values in the list pass the iterator truth test.
+ * Short-circuits and stops traversing the list if a true element is found.
+ */
+
+    var onlyEven = [2,4,6];
+    var mixedBag = [2,4,5,6];
+
+    var isEven = function(x) { return x % 2 === 0 };
+
+    assert(_(onlyEven).any(isEven) === FILL_ME_IN, "are any of the list items even?");
+    assert(_(mixedBag).any(isEven) === FILL_ME_IN, "leave the original list alone!");
+</pre></dd>
+
+<!-- Slide 18 -->
+<dt>Range</dt>
+<dd><pre>
+/* A function to create flexibly-numbered lists of integers, handy for each and map loops. */
+
+    assert(_.range(3) === FILL_ME_IN, "should have 3 elements");
+    assert(_.range(1, 4) === FILL_ME_IN, "should start at 1 and end at 4 (exclusive)" );
+    assert(_.range(0, -4, -1) === FILL_ME_IN, "should increment in steps of -1");
+</pre></dd>
+
+<!-- Slide 19 -->
+<dt>Flatten</dt>
+<dd><pre>
+/* A function to create flexibly-numbered lists of integers, handy for each and map loops. */
+    expect(_([ [1, 2], [3, 4] ]).flatten() === FILL_ME_IN);
+</pre></dd>
+
+<!-- Slide 20 -->
+<dt>Chain</dt>
+<dd><pre>
+/* Returns a wrapped object.
+ * Calling methods on this object will continue to return wrapped objects until value is used.
+ */
+
+    var result = _([ [0, 1], 2 ]).chain()
+                       .flatten()
+                       .map(function(x) { return x+1 } )
+                       .reduce(function (sum, x) { return sum + x })
+                       .value();
+
+    assert(result === FILL_ME_IN);
+</pre></dd>
+
+
+<!-- Slide 21 -->
+<dt>Continuations</dt>
+<dd></dd>
+
+<!-- Slide 22 -->
+<dt>Continuations enable async programming</dt>
+<dd><pre>
+/*TODO: Sample involving waiting on lots of network calls -
+    perhaps fetching a set of RSS feeds & doing some aggregation? */
+</pre></dd>
+
+<!-- Slide 23 -->
+<dt>Applying our enlightenment</dt>
+<dd></dd>
+
+<!-- Slide 24 -->
+<dt>Applying our enlightenment</dt>
+<dd><pre>
+    var products = [
+       { name: "Sonoma", ingredients: ["artichoke", "sundried tomatoes", "mushrooms"], containsNuts: false },
+       { name: "Pizza Primavera", ingredients: ["roma", "sundried tomatoes", "goats cheese", "rosemary"], containsNuts: false },
+       { name: "South Of The Border", ingredients: ["black beans", "jalapenos", "mushrooms"], containsNuts: false },
+       { name: "Blue Moon", ingredients: ["blue cheese", "garlic", "walnuts"], containsNuts: true },
+       { name: "Taste Of Athens", ingredients: ["spinach", "kalamata olives", "sesame seeds"], containsNuts: true }
+    ];
+
+   /* Given I'm allergic to nuts and hate mushrooms, find a pizza I can eat (imperative) */
+
+    var i,j,hasMushrooms, productsICanEat = [];
+
+    for (i = 0; i < products.length; i+=1) {
+        if (products[i].containsNuts === false) {
+            hasMushrooms = false;
+            for (j = 0; j < products[i].ingredients.length; j+=1) {
+               if (products[i].ingredients[j] === "mushrooms") {
+                  hasMushrooms = true;
+               }
+            }
+            if (!hasMushrooms) productsICanEat.push(products[i]);
+        }
+    }
+
+    assert(productsICanEat.length == FILL_ME_IN);
+
+    /* now solve in a functional style */
+
+      productsICanEat = [];
+
+      /* try using filter() & all() / any() */
+
+      assert(productsICanEat.length === FILL_ME_IN);
+
+</pre></dd>
+
+<!-- Slide 25 -->
+<dt>Go forth</dt>
+<dd><pre>
+  /* Congratulations grasshopper, you have reached the first level of
+   * functional enlightenment!
+   *
+   * Remember to take this new awareness with you when solving
+   * everyday problems - you will find that many of your
+   * existing tools contain functional elements, and that these
+   * can greatly simplify a certain class of problems
+   */
 </pre></dd>
 
 </dl>
