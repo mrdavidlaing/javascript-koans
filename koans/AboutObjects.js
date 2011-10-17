@@ -54,7 +54,8 @@ describe("About Objects", function () {
       meglomaniac = { 
         mastermind: "The Monarch", 
         henchwoman: "Dr Girlfriend",
-        theBomb: true
+        theBomb: true,
+        theDetonator: false
       };
     });
 
