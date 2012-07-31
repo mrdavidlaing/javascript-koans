@@ -28,7 +28,7 @@ describe("About Objects", function () {
       }
     };
    
-    battleCry = meglomaniac.battleCry(4);
+    var battleCry = meglomaniac.battleCry(4);
     expect(FILL_ME_IN).toMatch(battleCry);
   });
 
@@ -60,14 +60,14 @@ describe("About Objects", function () {
 
     it("should have the bomb", function () {
 
-      hasBomb = "theBomb" in meglomaniac;
+      var hasBomb = "theBomb" in meglomaniac;
      
       expect(hasBomb).toBe(FILL_ME_IN);
     });
 
     it("should not have the detonator however", function () {
 
-      hasDetonator = "theDetonator" in meglomaniac;
+      var hasDetonator = "theDetonator" in meglomaniac;
      
       expect(hasDetonator).toBe(FILL_ME_IN);
     });    
