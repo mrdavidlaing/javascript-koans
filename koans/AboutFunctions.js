@@ -39,18 +39,20 @@ describe("About Functions", function() {
   });
 
   it("should use lexical scoping to synthesise functions", function () {
-    
-    function makeIncreaseByFunction(increaseByAmount) {
-      var increaseByFunction = function increaseBy(numberToIncrease) {
-        return numberToIncrease + increaseByAmount;
+
+    function makeMysteryFunction(makerValue)
+    {
+      var newFunction = function doMysteriousThing(param)
+      {
+        return makerValue + param;
       };
-      return increaseByFunction;
+      return newFunction;
     }
-    
-    var increaseBy3 = makeIncreaseByFunction(3);
-    var increaseBy5 = makeIncreaseByFunction(5);
-    
-    expect(increaseBy3(10) + increaseBy5(10)).toBe(FILL_ME_IN);
+
+    var mysteryFunction3 = makeMysteryFunction(3);
+    var mysteryFunction5 = makeMysteryFunction(5);
+
+    expect(mysteryFunction3(10) + mysteryFunction5(5)).toBe(FILL_ME_IN);
   });
 
   it("should allow extra function arguments", function () {
