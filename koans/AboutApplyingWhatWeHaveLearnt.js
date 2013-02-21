@@ -62,7 +62,7 @@ describe("About Applying What We Have Learnt", function() {
 
     var sum = FILL_ME_IN;    /* try chaining range() and reduce() */
 
-    expect(233168).toBe(FILL_ME_IN);
+    expect(sum).toBe(233168);
   });
 
   /*********************************************************************************/
