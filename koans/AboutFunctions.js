@@ -97,15 +97,4 @@ describe("About Functions", function() {
     expect(praiseSinger.givePraise("Mary")).toBe(FILL_ME_IN);
 
   });
-
-  it("should use function body as a string", function () {
-    var add = new Function("a", "b", "return a + b;");
-    expect(add(1, 2)).toBe(FILL_ME_IN);
-
-    var multiply = function (a, b) {
-      //An internal comment
-      return a * b;
-    };
-    expect(multiply.toString()).toBe(FILL_ME_IN);
-  });
 });
