@@ -1,26 +1,26 @@
 describe("About Functions", function() {
 
   it("should declare functions", function() {
-    
+
     function add(a, b) {
       return a + b;
     }
-    
+
     expect(add(1, 2)).toBe(FILL_ME_IN);
   });
 
   it("should know internal variables override outer variables", function () {
     var message = "Outer";
-    
+
     function getMessage() {
       return message;
     }
-    
+
     function overrideMessage() {
       var message = "Inner";
       return message;
     }
-    
+
     expect(getMessage()).toBe(FILL_ME_IN);
     expect(overrideMessage()).toBe(FILL_ME_IN);
     expect(message).toBe(FILL_ME_IN);
@@ -56,19 +56,19 @@ describe("About Functions", function() {
   });
 
   it("should allow extra function arguments", function () {
-    
+
     function returnFirstArg(firstArg) {
       return firstArg;
     }
-    
+
     expect(returnFirstArg("first", "second", "third")).toBe(FILL_ME_IN);
-    
+
     function returnSecondArg(firstArg, secondArg) {
       return secondArg;
     }
-    
+
     expect(returnSecondArg("only give first arg")).toBe(FILL_ME_IN);
-    
+
     function returnAllArgs() {
       var argsArray = [];
       for (var i = 0; i < arguments.length; i += 1) {
@@ -76,7 +76,7 @@ describe("About Functions", function() {
       }
       return argsArray.join(",");
     }
-    
+
     expect(returnAllArgs("first", "second", "third")).toBe(FILL_ME_IN);
   });
 
@@ -85,27 +85,16 @@ describe("About Functions", function() {
     var appendRules = function (name) {
       return name + " rules!";
     };
-    
+
     var appendDoubleRules = function (name) {
       return name + " totally rules!";
     };
-    
+
     var praiseSinger = { givePraise: appendRules };
     expect(praiseSinger.givePraise("John")).toBe(FILL_ME_IN);
-    
+
     praiseSinger.givePraise = appendDoubleRules;
     expect(praiseSinger.givePraise("Mary")).toBe(FILL_ME_IN);
-      
-  });
 
-  it("should use function body as a string", function () {
-    var add = new Function("a", "b", "return a + b;");
-    expect(add(1, 2)).toBe(FILL_ME_IN);
-     
-    var multiply = function (a, b) {
-      //An internal comment
-      return a * b;
-    };
-    expect(multiply.toString()).toBe(FILL_ME_IN);
-  });    
+  });
 });
