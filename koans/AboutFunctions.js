@@ -29,9 +29,9 @@ describe("About Functions", function() {
   it("should have lexical scoping", function () {
     var variable = "top-level";
     function parentfunction() {
-        var variable = "local";
+      var variable = "local";
       function childfunction() {
-          return variable;
+        return variable;
       }
       return childfunction();
     }
