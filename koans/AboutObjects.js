@@ -1,25 +1,25 @@
 describe("About Objects", function () {
 
   describe("Properties", function () {
-    var meglomaniac;
+    var megalomaniac;
 
     beforeEach(function () {
-       meglomaniac = {  mastermind: "Joker", henchwoman: "Harley" };
+       megalomaniac = {  mastermind: "Joker", henchwoman: "Harley" };
     });
 
     it("should confirm objects are collections of properties", function () {
-      expect(meglomaniac.mastermind).toBe(FILL_ME_IN);
+      expect(megalomaniac.mastermind).toBe(FILL_ME_IN);
     });
 
     it("should confirm that properties are case sensitive", function () {
-      expect(meglomaniac.henchwoman).toBe(FILL_ME_IN);
-      expect(meglomaniac.henchWoman).toBe(FILL_ME_IN);
+      expect(megalomaniac.henchwoman).toBe(FILL_ME_IN);
+      expect(megalomaniac.henchWoman).toBe(FILL_ME_IN);
     });
   });
 
 
   it("should know properties that are functions act like methods", function () {
-    var meglomaniac = {
+    var megalomaniac = {
       mastermind : "Brain",
       henchman: "Pinky",
       battleCry: function (noOfBrains) {
@@ -28,14 +28,14 @@ describe("About Objects", function () {
       }
     };
 
-    var battleCry = meglomaniac.battleCry(4);
+    var battleCry = megalomaniac.battleCry(4);
     expect(FILL_ME_IN).toMatch(battleCry);
   });
 
   it("should confirm that when a function is attached to an object, 'this' refers to the object", function () {
     var currentDate = new Date();
     var currentYear = (currentDate.getFullYear());
-    var meglomaniac = {
+    var megalomaniac = {
       mastermind: "James Wood",
       henchman: "Adam West",
       birthYear: 1970,
@@ -45,13 +45,13 @@ describe("About Objects", function () {
     };
 
     expect(currentYear).toBe(FILL_ME_IN);
-    expect(meglomaniac.calculateAge()).toBe(FILL_ME_IN);
+    expect(megalomaniac.calculateAge()).toBe(FILL_ME_IN);
   });
 
   describe("'in' keyword", function () {
-    var meglomaniac;
+    var megalomaniac;
     beforeEach(function () {
-      meglomaniac = {
+      megalomaniac = {
         mastermind: "The Monarch",
         henchwoman: "Dr Girlfriend",
         theBomb: true
@@ -60,29 +60,29 @@ describe("About Objects", function () {
 
     it("should have the bomb", function () {
 
-      var hasBomb = "theBomb" in meglomaniac;
+      var hasBomb = "theBomb" in megalomaniac;
 
       expect(hasBomb).toBe(FILL_ME_IN);
     });
 
     it("should not have the detonator however", function () {
 
-      var hasDetonator = "theDetonator" in meglomaniac;
+      var hasDetonator = "theDetonator" in megalomaniac;
 
       expect(hasDetonator).toBe(FILL_ME_IN);
     });
   });
 
   it("should know that properties can be added and deleted", function () {
-    var meglomaniac = { mastermind : "Agent Smith", henchman: "Agent Smith" };
+    var megalomaniac = { mastermind : "Agent Smith", henchman: "Agent Smith" };
 
-    expect("secretary" in meglomaniac).toBe(FILL_ME_IN);
+    expect("secretary" in megalomaniac).toBe(FILL_ME_IN);
 
-    meglomaniac.secretary = "Agent Smith";
-    expect("secretary" in meglomaniac).toBe(FILL_ME_IN);
+    megalomaniac.secretary = "Agent Smith";
+    expect("secretary" in megalomaniac).toBe(FILL_ME_IN);
 
-    delete meglomaniac.henchman;
-    expect("henchman" in meglomaniac).toBe(FILL_ME_IN);
+    delete megalomaniac.henchman;
+    expect("henchman" in megalomaniac).toBe(FILL_ME_IN);
   });
 
 
