@@ -22,7 +22,7 @@ describe("About Expects", function() {
     expect(actualValue).toEqual(expectedValue);
   });
 
-  //  Sometimes you need to be really exact about what you "type.""
+  //  Sometimes you need to be really exact about what you "type."
   it("should assert equality with ===", function () {
     var expectedValue = FILL_ME_IN;
     var actualValue = (1 + 1).toString();
