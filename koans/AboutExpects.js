@@ -6,7 +6,7 @@ describe("About Expects", function() {
   });
 
   // To understand reality, we must compare our expectations against reality.
-  it("should expect equality", function () {
+  it("should expect equality", function() {
     var expectedValue = FILL_ME_IN;
     var actualValue = 1 + 1;
 
@@ -14,7 +14,7 @@ describe("About Expects", function() {
   });
 
   // Some ways of asserting equality are better than others.
-  it("should assert equality a better way", function () {
+  it("should assert equality a better way", function() {
     var expectedValue = FILL_ME_IN;
     var actualValue = 1 + 1;
 
@@ -23,7 +23,7 @@ describe("About Expects", function() {
   });
 
   // Sometimes you need to be really exact about what you "type."
-  it("should assert equality with ===", function () {
+  it("should assert equality with ===", function() {
     var expectedValue = FILL_ME_IN;
     var actualValue = (1 + 1).toString();
 
@@ -32,7 +32,7 @@ describe("About Expects", function() {
   });
 
   // Sometimes we will ask you to fill in the values.
-  it("should have filled in values", function () {
+  it("should have filled in values", function() {
     expect(1 + 1).toEqual(FILL_ME_IN);
   });
 });
