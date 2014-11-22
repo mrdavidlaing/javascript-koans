@@ -19,7 +19,7 @@ describe("About Mutability", function() {
     expect(aPerson.firstname).toBe(FILL_ME_IN);
   });
 
-  it("should expect prototype properties to be public and mutable", function () {
+  it("should expect prototype properties to be public and maskable", function () {
     function Person(firstname, lastname)
     {
       this.firstname = firstname;
