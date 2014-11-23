@@ -88,8 +88,7 @@ describe("About Objects", function () {
 
 
   it("should use prototype to add to all objects", function () {
-      function Circle(radius)
-      {
+      function Circle(radius) {
         this.radius = radius;
       }
 
