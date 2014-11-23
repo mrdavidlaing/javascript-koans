@@ -40,10 +40,8 @@ describe("About Functions", function() {
 
   it("should use lexical scoping to synthesise functions", function () {
 
-    function makeMysteryFunction(makerValue)
-    {
-      var newFunction = function doMysteriousThing(param)
-      {
+    function makeMysteryFunction(makerValue) {
+      var newFunction = function doMysteriousThing(param) {
         return makerValue + param;
       };
       return newFunction;
