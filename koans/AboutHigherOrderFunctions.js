@@ -27,7 +27,8 @@ describe("About Higher Order Functions", function () {
   it("should use 'reduce' to update the same result on each iteration", function () {
     var numbers = [1, 2, 3];
     var reduction = _(numbers).reduce(
-            function(/* result from last call */ memo, /* current */ x) { return memo + x; }, /* initial */ 0);
+      function(/* result from last call */ memo, /* current */ x) { return memo + x; }, /* initial */ 0
+    );
 
     expect(reduction).toBe(FILL_ME_IN);
     expect(numbers).toEqual(FILL_ME_IN);
@@ -67,23 +68,23 @@ describe("About Higher Order Functions", function () {
   });
 
   it("should use range to generate an array", function() {
-      expect(_.range(3)).toEqual(FILL_ME_IN);
-      expect(_.range(1, 4)).toEqual(FILL_ME_IN);
-      expect(_.range(0, -4, -1)).toEqual(FILL_ME_IN);
+    expect(_.range(3)).toEqual(FILL_ME_IN);
+    expect(_.range(1, 4)).toEqual(FILL_ME_IN);
+    expect(_.range(0, -4, -1)).toEqual(FILL_ME_IN);
   });
 
   it("should use flatten to make nested arrays easy to work with", function() {
-      expect(_([ [1, 2], [3, 4] ]).flatten()).toEqual(FILL_ME_IN);
+    expect(_([ [1, 2], [3, 4] ]).flatten()).toEqual(FILL_ME_IN);
   });
 
   it("should use chain() ... .value() to use multiple higher order functions", function() {
-      var result = _([ [0, 1], 2 ]).chain()
-                       .flatten()
-                       .map(function(x) { return x+1; } )
-                       .reduce(function (sum, x) { return sum + x; })
-                       .value();
+    var result = _([ [0, 1], 2 ]).chain()
+     .flatten()
+     .map(function(x) { return x+1; } )
+     .reduce(function (sum, x) { return sum + x; })
+     .value();
 
-      expect(result).toEqual(FILL_ME_IN);
+    expect(result).toEqual(FILL_ME_IN);
   });
 
 });
