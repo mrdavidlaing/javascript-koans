@@ -36,14 +36,14 @@ describe("About Higher Order Functions", function () {
 
   it("should use 'forEach' for simple iteration", function () {
     var numbers = [1, 2, 3];
-    var msg = "";
+    var values = [];
     var isEven = function (item) {
-      msg += (item % 2) === 0;
+      values.push((item % 2) === 0);
     };
 
     _(numbers).forEach(isEven);
 
-    expect(msg).toEqual(FILL_ME_IN);
+    expect(values).toEqual(FILL_ME_IN);
     expect(numbers).toEqual(FILL_ME_IN);
   });
 
