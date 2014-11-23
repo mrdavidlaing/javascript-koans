@@ -35,7 +35,7 @@ describe("About Higher Order Functions", function () {
   });
 
   it("should use 'forEach' for simple iteration", function () {
-    var numbers = [1,2,3];
+    var numbers = [1, 2, 3];
     var msg = "";
     var isEven = function (item) {
       msg += (item % 2) === 0;
@@ -48,8 +48,8 @@ describe("About Higher Order Functions", function () {
   });
 
   it("should use 'all' to test whether all items pass condition", function () {
-    var onlyEven = [2,4,6];
-    var mixedBag = [2,4,5,6];
+    var onlyEven = [2, 4, 6];
+    var mixedBag = [2, 4, 5, 6];
 
     var isEven = function(x) { return x % 2 === 0; };
 
@@ -58,8 +58,8 @@ describe("About Higher Order Functions", function () {
   });
 
   it("should use 'any' to test if any items passes condition" , function () {
-    var onlyEven = [2,4,6];
-    var mixedBag = [2,4,5,6];
+    var onlyEven = [2, 4, 6];
+    var mixedBag = [2, 4, 5, 6];
 
     var isEven = function(x) { return x % 2 === 0; };
 
