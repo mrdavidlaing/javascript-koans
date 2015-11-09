@@ -60,7 +60,7 @@ describe("About Higher Order Functions", function () {
     var onlyEven = [2,4,6];
     var mixedBag = [2,4,5,6];
 
-    var isEven = function(x) { return x % 2 === 0 };
+    var isEven = function(x) { return x % 2 === 0; };
 
     expect(_(onlyEven).any(isEven)).toBe(FILL_ME_IN);
     expect(_(mixedBag).any(isEven)).toBe(FILL_ME_IN);
@@ -77,14 +77,13 @@ describe("About Higher Order Functions", function () {
   });
 
   it("should use chain() ... .value() to use multiple higher order functions", function() {
-      var result = _([ [0, 1], 2 ]).chain()
-                       .flatten()
-                       .map(function(x) { return x+1 } )
-                       .reduce(function (sum, x) { return sum + x })
-                       .value();
+      var result = _.chain([ [0, 1], 2 ])
+      .flatten()
+      .map(function (x) { return x+1; } )
+      .reduce(function (sum, x) { return sum + x; })
+      .value();
 
       expect(result).toEqual(FILL_ME_IN);
   });
 
 });
-
