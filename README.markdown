@@ -1,5 +1,4 @@
-# Javascript Koans - koans to learn Javascript (the good bits) #
-
+# javascript-koans
 Based on Edgecase's fantastic 
 [Ruby koans](http://github.com/edgecase/ruby_koans), the goal of the
 Javascript koans is to teach you Javascript programming through
@@ -15,8 +14,7 @@ koans will be very simple, so don't overthink them! As you progress through
 more koans, more and more Javascript syntax will be introduced which will allow
 you to solve more complicated problems and use more advanced techniques.
 
-### Running the Koans from a Browser
-
+## Running the Koans
 Simply navigate to the Javascript Koans folder using a file browser, and
 double click on KoansRunnner.html. 
 
@@ -31,19 +29,13 @@ The test runner used is [Jasmine](http://pivotal.github.com/jasmine/) with a
 customized report viewer.
 
 ### Changelog
-
 *  v3 - Nov 2010  - Moved out of branch of functional-koans project, into own top level project
 *  v2 - Sept 2010 - Second version based on jasmine (Thanks Greg Malcolm!)
 *  v1 - July 2010 - First version based on jsTestDriver
 
-### Inspirations & thanks
-
+### Acknowledgements
 *  Dick Wall (the Java posse) - for bringing the idea of koans to my attention
 *  Edgecase - for the great Ruby Koans
 *  Douglas Crockford - for Javascript; the good bits
 
-##### License
-
-This software is (c) 2010 David Laing & Greg Malcolm, and licensed under the MIT license (see
-LICENCE for details).  Enjoy!
-
+### [MIT Licensed](LICENSE)
