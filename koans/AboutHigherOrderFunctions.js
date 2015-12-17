@@ -1,6 +1,6 @@
 var _; //globals
 
-/* This section uses a functional extension known as Underscore.js - http://documentcloud.github.com/underscore/
+/* This section uses a functional extension known as Underscore.js - http://underscorejs.org/
      "Underscore is a utility-belt library for JavaScript that provides a lot of the functional programming support
       that you would expect in Prototype.js (or Ruby), but without extending any of the built-in JavaScript objects.
       It's the tie to go along with jQuery's tux."
@@ -87,4 +87,3 @@ describe("About Higher Order Functions", function () {
   });
 
 });
-
