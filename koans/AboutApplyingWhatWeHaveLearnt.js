@@ -82,6 +82,9 @@ describe("About Applying What We Have Learnt", function() {
     var ingredientCount = { "{ingredient name}": 0 };
 
     /* chain() together map(), flatten() and reduce() */
+    // notice: these koans use an older underscore library, 1.1.6
+    // The newer chain syntax _.chain(collection) will cause errors.
+    // Use instead the syntax _(collection).chain()
 
     expect(ingredientCount['mushrooms']).toBe(FILL_ME_IN);
   });
