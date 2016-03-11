@@ -1,10 +1,10 @@
 var _; //globals
 
 /* This section uses a functional extension known as Underscore.js - http://documentcloud.github.com/underscore/
-     "Underscore is a utility-belt library for JavaScript that provides a lot of the functional programming support
-      that you would expect in Prototype.js (or Ruby), but without extending any of the built-in JavaScript objects.
-      It's the tie to go along with jQuery's tux."
- */
+   "Underscore is a utility-belt library for JavaScript that provides a lot of the functional programming support
+   that you would expect in Prototype.js (or Ruby), but without extending any of the built-in JavaScript objects.
+   It's the tie to go along with jQuery's tux."
+   */
 describe("About Higher Order Functions", function () {
 
   it("should use filter to return array items that meet a criteria", function () {
@@ -26,8 +26,12 @@ describe("About Higher Order Functions", function () {
 
   it("should use 'reduce' to update the same result on each iteration", function () {
     var numbers = [1, 2, 3];
+    /* Reduce accepts two arguments, a callback function and an initial value */
     var reduction = _(numbers).reduce(
-            function(/* result from last call */ memo, /* current */ x) { return memo + x }, /* initial */ 0);
+      /* `memo` is the previous value, `x` is the current value */
+      function(memo, x) {
+        return memo + x
+      }, 0); /* 0 is the initial value which is assigned to `memo` on first run */
 
     expect(reduction).toBe(FILL_ME_IN);
     expect(numbers).toEqual(FILL_ME_IN);
@@ -67,24 +71,23 @@ describe("About Higher Order Functions", function () {
   });
 
   it("should use range to generate an array", function() {
-      expect(_.range(3)).toEqual(FILL_ME_IN);
-      expect(_.range(1, 4)).toEqual(FILL_ME_IN);
-      expect(_.range(0, -4, -1)).toEqual(FILL_ME_IN);
+    expect(_.range(3)).toEqual(FILL_ME_IN);
+    expect(_.range(1, 4)).toEqual(FILL_ME_IN);
+    expect(_.range(0, -4, -1)).toEqual(FILL_ME_IN);
   });
 
   it("should use flatten to make nested arrays easy to work with", function() {
-      expect(_([ [1, 2], [3, 4] ]).flatten()).toEqual(FILL_ME_IN);
+    expect(_([ [1, 2], [3, 4] ]).flatten()).toEqual(FILL_ME_IN);
   });
 
   it("should use chain() ... .value() to use multiple higher order functions", function() {
-      var result = _([ [0, 1], 2 ]).chain()
-                       .flatten()
-                       .map(function(x) { return x+1 } )
-                       .reduce(function (sum, x) { return sum + x })
-                       .value();
+    var result = _([ [0, 1], 2 ]).chain()
+      .flatten()
+      .map(function(x) { return x+1 } )
+      .reduce(function (sum, x) { return sum + x })
+      .value();
 
-      expect(result).toEqual(FILL_ME_IN);
+    expect(result).toEqual(FILL_ME_IN);
   });
 
 });
-
