@@ -59,7 +59,7 @@ describe("About Arrays", function() {
     var array = [ "zero", "one", "two", "three", "four", "five" ];
 
     function passedByReference(refArray) {
-        refArray[1] = "changed in function";
+      refArray[1] = "changed in function";
     }
     passedByReference(array);
     expect(array[1]).toBe(FILL_ME_IN);
