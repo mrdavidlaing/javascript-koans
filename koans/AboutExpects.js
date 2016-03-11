@@ -17,7 +17,7 @@ describe('About Expects', function() {
 
   // Some ways of asserting equality are better than others.
   it('should assert equality a better way', function() {
-    var expectedValue = FILL_ME_IN;
+    var expectedValue = 2;
     var actualValue = 1 + 1;
 
   // toEqual() compares using common sense equality.
@@ -26,7 +26,7 @@ describe('About Expects', function() {
 
   // Sometimes you need to be precise about what you "type."
   it('should assert equality with ===', function() {
-    var expectedValue = FILL_ME_IN;
+    var expectedValue = "2";
     var actualValue = (1 + 1).toString();
 
   // toBe() will always use === to compare.
@@ -35,6 +35,6 @@ describe('About Expects', function() {
 
   // Sometimes we will ask you to fill in the values.
   it('should have filled in values', function() {
-    expect(1 + 1).toEqual(FILL_ME_IN);
+    expect(1 + 1).toEqual(2);
   });
 });
