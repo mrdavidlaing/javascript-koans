@@ -4,7 +4,7 @@ describe("About Arrays", function() {
   it("should create arrays", function() {
     var emptyArray = [];
     expect(typeof(emptyArray)).toBe('object'); //A mistake? - http://javascript.crockford.com/remedial.html
-    expect(emptyArray.length).toBe(FILL_ME_IN);
+    expect(emptyArray.length).toBe(0);
 
     var multiTypeArray = [0, 1, "two", function () { return 3; }, {value1: 4, value2: 5}, [6, 7]];
     expect(multiTypeArray[0]).toBe(FILL_ME_IN);
