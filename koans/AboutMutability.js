@@ -22,21 +22,21 @@ describe("About Mutability", function() {
   it("should expect prototype properties to be public and mutable", function () {
     function Person(firstname, lastname)
     {
-      this.firstname = firstname;
-      this.lastname = lastname;
+      this.firstname = "John";
+      this.lastname = "Smith";
     }
     Person.prototype.getFullName = function () {
       return this.firstname + " " + this.lastname;
     };
 
     var aPerson = new Person ("John", "Smith");
-    expect(aPerson.getFullName()).toBe(FILL_ME_IN);
+    expect(aPerson.getFullName()).toBe("John Smith");
 
     aPerson.getFullName = function () {
       return this.lastname + ", " + this.firstname;
     };
 
-    expect(aPerson.getFullName()).toBe(FILL_ME_IN);
+    expect(aPerson.getFullName()).toBe("Smith, John");
   });
 
   it("should know that variables inside a constructor and constructor args are private", function () {
