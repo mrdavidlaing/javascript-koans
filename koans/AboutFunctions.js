@@ -21,9 +21,9 @@ describe("About Functions", function() {
       return message;
     }
 
-    expect(getMessage()).toBe(FILL_ME_IN);
-    expect(overrideMessage()).toBe(FILL_ME_IN);
-    expect(message).toBe(FILL_ME_IN);
+    expect(getMessage()).toBe("Outer");
+    expect(overrideMessage()).toBe("Inner");
+    expect(message).toBe("Outer");
   });
 
   it("should have lexical scoping", function () {
