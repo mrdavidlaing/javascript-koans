@@ -62,22 +62,22 @@ describe("About Arrays", function() {
         refArray[1] = "changed in function";
     }
     passedByReference(array);
-    expect(array[1]).toBe(FILL_ME_IN);
+    expect(array[1]).toBe("changed in function");
 
     var assignedArray = array;
     assignedArray[5] = "changed in assignedArray";
-    expect(array[5]).toBe(FILL_ME_IN);
+    expect(array[5]).toBe("changed in assignedArray");
 
     var copyOfArray = array.slice();
     copyOfArray[3] = "changed in copyOfArray";
-    expect(array[3]).toBe(FILL_ME_IN);
+    expect(array[3]).toBe("three");
   });
 
   it("should push and pop", function () {
     var array = [1, 2];
     array.push(3);
 
-    expect(array).toEqual(FILL_ME_IN);
+    expect(array).toEqual([1, 2, 3]);
 
     var poppedValue = array.pop();
     expect(poppedValue).toBe(FILL_ME_IN);
