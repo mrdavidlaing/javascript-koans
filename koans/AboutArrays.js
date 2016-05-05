@@ -8,11 +8,11 @@ describe("About Arrays", function() {
 
     var multiTypeArray = [0, 1, "two", function () { return 3; }, {value1: 4, value2: 5}, [6, 7]];
     expect(multiTypeArray[0]).toBe(0);
-    expect(multiTypeArray[2]).toBe(FILL_ME_IN);
-    expect(multiTypeArray[3]()).toBe(FILL_ME_IN);
-    expect(multiTypeArray[4].value1).toBe(FILL_ME_IN);
-    expect(multiTypeArray[4]["value2"]).toBe(FILL_ME_IN);
-    expect(multiTypeArray[5][0]).toBe(FILL_ME_IN);
+    expect(multiTypeArray[2]).toBe("two");
+    expect(multiTypeArray[3]()).toBe(3);
+    expect(multiTypeArray[4].value1).toBe(4);
+    expect(multiTypeArray[4]["value2"]).toBe(5);
+    expect(multiTypeArray[5][0]).toBe(6);
   });
 
   it("should understand array literals", function () {
