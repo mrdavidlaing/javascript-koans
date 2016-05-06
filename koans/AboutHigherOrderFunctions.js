@@ -83,7 +83,7 @@ describe("About Higher Order Functions", function () {
                        .reduce(function (sum, x) { return sum + x })
                        .value();
 
-      expect(result).toEqual(FILL_ME_IN);
+      expect(result).toEqual(6);
   });
 
 });
