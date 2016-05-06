@@ -73,7 +73,7 @@ describe("About Higher Order Functions", function () {
   });
 
   it("should use flatten to make nested arrays easy to work with", function() {
-      expect(_([ [1, 2], [3, 4] ]).flatten()).toEqual(FILL_ME_IN);
+      expect(_([ [1, 2], [3, 4] ]).flatten()).toEqual([1, 2, 3, 4]);
   });
 
   it("should use chain() ... .value() to use multiple higher order functions", function() {
