@@ -41,7 +41,9 @@ describe("About Applying What We Have Learnt", function() {
 
       /* solve using filter() & all() / any() */
 
-      expect(productsICanEat.length).toBe(0);
+      var productsICanEat = _(products).filter(function(x){return !x.containsNuts && !_(x.ingredients).any(function(m){return m === "mushrooms"})})
+
+      expect(productsICanEat.length).toBe(1);
   });
 
   /*********************************************************************************/
@@ -62,7 +64,7 @@ describe("About Applying What We Have Learnt", function() {
 
     var sum = FILL_ME_IN;    /* try chaining range() and reduce() */
 
-    expect(233168).toBe(233168);
+    expect(233168).toBe(FILL_ME_IN);
   });
 
   /*********************************************************************************/
