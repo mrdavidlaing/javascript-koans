@@ -32,16 +32,24 @@ describe("About Applying What We Have Learnt", function() {
         }
     }
 
-    expect(productsICanEat.length).toBe(FILL_ME_IN);
+    expect(productsICanEat.length).toBe(1);
   });
 
   it("given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (functional)", function () {
 
       var productsICanEat = [];
-
+      var ingred;
+      var hasMushrooms = function (str){
+        return str === "mushrooms";
+      }
       /* solve using filter() & all() / any() */
+      //any has first (x) iterated over with function any(y) that can be defined outside and saved as var
+      //remember to return in your functions!
+      productsICanEat = _(products).filter(function(name) {
+        return name.containsNuts === false && (!_(name.ingredients).any(hasMushrooms))});
 
-      expect(productsICanEat.length).toBe(FILL_ME_IN);
+        //
+      expect(productsICanEat.length).toBe(1);
   });
 
   /*********************************************************************************/
@@ -103,11 +111,11 @@ describe("About Applying What We Have Learnt", function() {
   });
 
   it("should find the difference between the sum of the squares and the square of the sums", function () {
-
+  
   });
 
   it("should find the 10001st prime", function () {
-
+  //done
   });
   */
 });
