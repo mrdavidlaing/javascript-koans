@@ -103,11 +103,11 @@ describe("About Applying What We Have Learnt", function() {
   /*********************************************************************************/
   /* UNCOMMENT FOR EXTRA CREDIT */
   
-<<<<<<< HEAD
-  it("should find the largest prime factor of a composite number", function () { 
-=======
+
+//  it("should find the largest prime factor of a composite number", function () { 
+
 //   it("should find the largest prime factor of a composite number", function () { 
->>>>>>> 0a7bafe05359b9d27d77feae83a84dcb9e2f0c24
+
     
 
 //   });
@@ -127,12 +127,12 @@ describe("About Applying What We Have Learnt", function() {
 
 //   it("should find the 10001st prime", function () {
 
-<<<<<<< HEAD
-  });
+
+ // });
   
-});
-=======
+//});
+
 //   });
   
-// });
->>>>>>> 0a7bafe05359b9d27d77feae83a84dcb9e2f0c24
+ });
+
