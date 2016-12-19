@@ -62,15 +62,15 @@ describe("About Arrays", function() {
         refArray[1] = "changed in function";
     }
     passedByReference(array);
-    expect(array[1]).toBe(FILL_ME_IN);
+    expect(array[1]).toBe("changed in function");
 
     var assignedArray = array;
     assignedArray[5] = "changed in assignedArray";
-    expect(array[5]).toBe(FILL_ME_IN);
+    expect(array[5]).toBe("changed in assignedArray");
 
     var copyOfArray = array.slice();
     copyOfArray[3] = "changed in copyOfArray";
-    expect(array[3]).toBe(FILL_ME_IN);
+    expect(array[3]).toBe("three");
   });
 
   it("should push and pop", function () {
