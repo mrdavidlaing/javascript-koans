@@ -10,4 +10,6 @@ Javascript Koans 디렉토리에 있는 KoansRunner.html을 브라우저에서 �
 
 첫번째 에러는 `koans/AboutExpect.js`에서 나올겁니다. 테스트를 고친 후, 브라우저를 새로고침 해주세요. 모든 테스트가 통과될때까지 반복해주세요!
 
+![screenshot](https://raw.githubusercontent.com/vanilla-coding/javascript-koans/master/screenshot.png)
+
 ### [MIT Licensed](LICENSE)
