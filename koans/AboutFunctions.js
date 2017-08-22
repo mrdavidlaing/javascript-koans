@@ -1,6 +1,7 @@
-describe("About Functions", function() {
+describe("Functions", function() {
+  // 지금까지 해온 것처럼 코드를 잘 보시고 FILL_ME_IN을 쭈욱 수정하시면 됩니다!
 
-  it("should declare functions", function() {
+  it("function declaration", function() {
 
     function add(a, b) {
       return a + b;
@@ -9,7 +10,7 @@ describe("About Functions", function() {
     expect(add(1, 2)).toBe(FILL_ME_IN);
   });
 
-  it("should know internal variables override outer variables", function () {
+  it("function 내부의 variable은 외부의 variable을 덮어씌운다는 것을 아셔야 합니다.", function () {
     var message = "Outer";
 
     function getMessage() {
@@ -26,36 +27,24 @@ describe("About Functions", function() {
     expect(message).toBe(FILL_ME_IN);
   });
 
-  it("should have lexical scoping", function () {
+  it("Scope에 대한 퀴즈입니다.", function () {
     var variable = "top-level";
+
     function parentfunction() {
       var variable = "local";
+
       function childfunction() {
         return variable;
       }
+
       return childfunction();
     }
+
+    // parentfunction을 실행시키면 뭐가 나올까요?
     expect(parentfunction()).toBe(FILL_ME_IN);
   });
 
-  it("should use lexical scoping to synthesise functions", function () {
-
-    function makeMysteryFunction(makerValue)
-    {
-      var newFunction = function doMysteriousThing(param)
-      {
-        return makerValue + param;
-      };
-      return newFunction;
-    }
-
-    var mysteryFunction3 = makeMysteryFunction(3);
-    var mysteryFunction5 = makeMysteryFunction(5);
-
-    expect(mysteryFunction3(10) + mysteryFunction5(5)).toBe(FILL_ME_IN);
-  });
-
-  it("should allow extra function arguments", function () {
+  it("함수 인자 이해하기", function () {
 
     function returnFirstArg(firstArg) {
       return firstArg;
@@ -80,7 +69,7 @@ describe("About Functions", function() {
     expect(returnAllArgs("first", "second", "third")).toBe(FILL_ME_IN);
   });
 
-  it("should pass functions as values", function () {
+  it("함수 사용하기", function () {
 
     var appendRules = function (name) {
       return name + " rules!";

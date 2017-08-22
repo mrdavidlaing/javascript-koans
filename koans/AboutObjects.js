@@ -1,4 +1,4 @@
-describe("About Objects", function () {
+describe("Objects", function () {
 
   describe("Properties", function () {
     var megalomaniac;
@@ -7,18 +7,18 @@ describe("About Objects", function () {
        megalomaniac = {  mastermind: "Joker", henchwoman: "Harley" };
     });
 
-    it("should confirm objects are collections of properties", function () {
+    it("object는 property들을 갖고있다.", function () {
       expect(megalomaniac.mastermind).toBe(FILL_ME_IN);
     });
 
-    it("should confirm that properties are case sensitive", function () {
+    it("object property는 대소문자를 구분해야 합니다.", function () {
       expect(megalomaniac.henchwoman).toBe(FILL_ME_IN);
       expect(megalomaniac.henchWoman).toBe(FILL_ME_IN);
     });
   });
 
 
-  it("should know properties that are functions act like methods", function () {
+  it("함수값을 갖고있는 object property는 method로 사용 가능합니다.", function () {
     var megalomaniac = {
       mastermind : "Brain",
       henchman: "Pinky",
@@ -32,7 +32,7 @@ describe("About Objects", function () {
     expect(FILL_ME_IN).toMatch(battleCry);
   });
 
-  it("should confirm that when a function is attached to an object, 'this' refers to the object", function () {
+  it("object의 method를 사용할때는, this의 값은 해당 object입니다.", function () {
     var currentDate = new Date();
     var currentYear = (currentDate.getFullYear());
     var megalomaniac = {
@@ -58,14 +58,14 @@ describe("About Objects", function () {
       };
     });
 
-    it("should have the bomb", function () {
+    it("hasBomb을 알아내주세요.", function () {
 
       var hasBomb = "theBomb" in megalomaniac;
 
       expect(hasBomb).toBe(FILL_ME_IN);
     });
 
-    it("should not have the detonator however", function () {
+    it("theDetonator는 없습니다.", function () {
 
       var hasDetonator = "theDetonator" in megalomaniac;
 
@@ -73,7 +73,7 @@ describe("About Objects", function () {
     });
   });
 
-  it("should know that properties can be added and deleted", function () {
+  it("object property는 지우거나 추가할 수 있습니다.", function () {
     var megalomaniac = { mastermind : "Agent Smith", henchman: "Agent Smith" };
 
     expect("secretary" in megalomaniac).toBe(FILL_ME_IN);
@@ -86,7 +86,7 @@ describe("About Objects", function () {
   });
 
 
-  it("should use prototype to add to all objects", function () {
+  it("prototype에 추가하면 모든 instance에서 사용 가능합니다.(prototype chain)", function () {
       function Circle(radius)
       {
         this.radius = radius;

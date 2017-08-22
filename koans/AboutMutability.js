@@ -1,13 +1,13 @@
-describe("About Mutability", function() {
+describe("Mutability", function() {
 
-  it("should expect object properties to be public and mutable", function () {
+  it("object property는 수정 가능합니다.", function () {
     var aPerson = {firstname: "John", lastname: "Smith" };
     aPerson.firstname = "Alan";
 
     expect(aPerson.firstname).toBe(FILL_ME_IN);
   });
 
-  it("should understand that constructed properties are public and mutable", function () {
+  it("Constructor를 이용하여 만든 object의 property도 수정 가능합니다.", function () {
     function Person(firstname, lastname)
     {
       this.firstname = firstname;
@@ -19,7 +19,7 @@ describe("About Mutability", function() {
     expect(aPerson.firstname).toBe(FILL_ME_IN);
   });
 
-  it("should expect prototype properties to be public and mutable", function () {
+  it("prototype의 method도 수정 가능합니다.", function () {
     function Person(firstname, lastname)
     {
       this.firstname = firstname;
@@ -36,10 +36,11 @@ describe("About Mutability", function() {
       return this.lastname + ", " + this.firstname;
     };
 
+    // 어떻게 될까요?
     expect(aPerson.getFullName()).toBe(FILL_ME_IN);
   });
 
-  it("should know that variables inside a constructor and constructor args are private", function () {
+  it("Constructor 함수속의 변수들은 해당 scope에서만 읽을 수 있습니다.", function () {
     function Person(firstname, lastname)
     {
       var fullName = firstname + " " + lastname;
