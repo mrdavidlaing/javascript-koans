@@ -1,40 +1,15 @@
 # javascript-koans
-Based on Edgecase's fantastic 
-[Ruby koans](http://github.com/edgecase/ruby_koans), the goal of the
-Javascript koans is to teach you Javascript programming through
-testing.
+Javascript Koans의 목적은 여러분에게 자바스크립트 프로그래밍을 테스트를 통해서 가르쳐드리기 위해서 입니다.
 
-When you first run the koans, you'll be presented with a runtime error and a
-stack trace indicating where the error occurred. Your goal is to make the
-error go away. As you fix each error, you should learn something about the
-Javascript language and functional programming in general.
+처음 실행을 시키면, 자바스크립트 에러가 보이고 그 에러가 어디에서 발생했는지 보입니다. 여러분의 목표는 에러를 없애는 것입니다. 각각의 에러를 고쳐가면서, 여러분은 자바스크립트 프로그래밍을 배우게 됩니다.
 
-Your journey towards Javascript enlightenment starts in the koans/AboutExpects.js file. These
-koans will be very simple, so don't overthink them! As you progress through
-more koans, more and more Javascript syntax will be introduced which will allow
-you to solve more complicated problems and use more advanced techniques.
+자바스크립트를 배우기 위한 첫 걸음은 `koans/AboutExpect.js` 파일에서 시작합니다. 매우 간단하니 너무 깊게 생각하지 마세요! 진도를 나아갈수록 더 어렵고 복잡한 문제를 풀게 됩니다!
 
-## Running the Koans
-Simply navigate to the Javascript Koans folder using a file browser, and
-double click on KoansRunnner.html. 
+## 실행 방법
+Javascript Koans 디렉토리에 있는 KoansRunner.html을 브라우저에서 열어주세요. (크롬이나 파이어폭스를 추천)
 
-Any browser will do, but for the best results Firefox or Chrome is
-recommended. More stack trace information shows up for javascript on these
-browsers.
+첫번째 에러는 `koans/AboutExpect.js`에서 나올겁니다. 테스트를 고친 후, 브라우저를 새로고침 해주세요. 모든 테스트가 통과될때까지 반복해주세요!
 
-The first error will be in koans/AboutExpects.js. Fix the first test and
-refresh the browser. Rinse and repeat until all tests turn green.
-
-The test runner used is [Jasmine](http://jasmine.github.io/) with a customized report viewer.
-
-### Changelog
-*  v3 - Nov 2010  - Moved out of branch of functional-koans project, into own top level project
-*  v2 - Sept 2010 - Second version based on jasmine (Thanks Greg Malcolm!)
-*  v1 - July 2010 - First version based on jsTestDriver
-
-### Acknowledgements
-*  Dick Wall (the Java posse) - for bringing the idea of koans to my attention
-*  Edgecase - for the great Ruby Koans
-*  Douglas Crockford - for Javascript; the good bits
+![screenshot](https://raw.githubusercontent.com/vanilla-coding/javascript-koans/master/screenshot.png)
 
 ### [MIT Licensed](LICENSE)
