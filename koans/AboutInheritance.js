@@ -25,19 +25,19 @@ describe("Inheritance", function() {
   });
 
   it("상속받은 method를 사용할 수 있다.", function() {
-    expect(this.swedishChef.cook()).toEqual(FILL_ME_IN);
+    expect(this.swedishChef.cook()).toEqual("Mmmm soup!");
   });
 
   it("일반 method도 사용할 수 있다.", function() {
-    expect(this.swedishChef.answerNanny()).toEqual(FILL_ME_IN);
+    expect(this.swedishChef.answerNanny()).toEqual("Everything's cool!");
   });
 
   it("부모 Constructor에서 생성한 property들을 갖고 있다.", function() {
-    expect(this.swedishChef.age).toEqual(FILL_ME_IN);
-    expect(this.swedishChef.hobby).toEqual(FILL_ME_IN);
+    expect(this.swedishChef.age).toEqual(2);
+    expect(this.swedishChef.hobby).toEqual("cooking");
   });
 
   it("Constructor에서 생성한 property를 갖고 있다.", function() {
-    expect(this.swedishChef.mood).toEqual(FILL_ME_IN);
+    expect(this.swedishChef.mood).toEqual("chillin");
   });
 });
