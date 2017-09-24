@@ -1,0 +1,467 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Javascript functional programming koans</title>
+    <link href="lib/presentation/presentation.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="lib/presentation/recipes.css">
+    <script src="lib/presentation/jquery.js"></script>
+    <script src="lib/presentation/jquery.chili.js"></script>
+    <script src="lib/presentation/recipes.js"></script>
+    <script src="lib/presentation/presentation.js"></script>
+
+    <script type="text/javascript" src="lib/underscore-min.js"></script>
+    <script type="text/javascript" src="lib/FILL_ME_IN.js"></script>
+    <script type="text/javascript" src="lib/CIAPI.services.js"></script>
+
+    <script>
+        function assert(pass, msg) {
+            var type = pass ? "PASS" : "FAIL";
+            var karma = pass ? "Your awareness has been expanded": "Your karma is being damaged...";
+            jQuery("#results").append("<li class='" + type + "'><b>" + karma + "</b> " + msg + "</li>");
+        }
+        function error(msg) {
+            jQuery("#results").append("<li class='ERROR'><b>Your karma is being damaged...</b> " + JSON.stringify(msg) + "</li>");
+        }
+        function log() {
+            var msg = "";
+            for (var i = 0; i < arguments.length; i++) {
+                msg += " " + JSON.stringify(arguments[i]);
+            }
+            jQuery("#results").append("<li class='LOG'><b>LOG</b> " + msg + "</li>");
+        }
+    </script>
+</head>
+<body>
+
+<h3 class="">Javascript functional programming koans</h3>
+
+<div id="area">
+    <pre id="pre" class="javascript" style="height: 425px; ">
+        /* TOC goes here */
+    </pre>
+    <form id="form">
+        <div class="buttons" style="display: none; ">
+            <input type="submit" value="Meditate" class="run" id="run">
+            <input type="button" id="prev" value="« Prev">
+            <input type="button" id="next" value="Next »">
+        </div>
+        <div id="container">
+            <textarea id="code" wrap="off" style="height: 425px; "></textarea>
+            <ol id="results"></ol>
+            <p id="cite">Double-click the code to edit the tutorial and try your own code.
+                <br>John Resig increased his karma by <a href="http://ejohn.org/apps/learn/">creating this tutorial framework</a></p>
+        </div>
+    </form>
+</div>
+
+<dl style="display: none; ">
+    <!-- Slide 1 -->
+    <dt>Our Goal</dt>
+    <dd></dd>
+
+    <!-- Slide 2 -->
+    <dt>Our Goal > Enlightenment through functional programming</dt>
+    <dd><pre>
+
+/*
+ *   Today we will expand our awareness of:
+ *
+ *   (1) First class functions
+ *
+ *   (2) Higher order functions and collections
+ *
+ *   (3) Continuations
+ *
+ *   by meditating on a series of koans
+*/
+    </pre></dd>
+
+    <!-- Slide 3 -->
+    <dt>What are these koans of which you speak master?</dt>
+    <dd><pre>
+//Koans help us contemplate truth by testing reality.
+assert(false, "This should be true" );
+
+//To understand reality, we must compare our assertions against reality.
+assert( ( 1 + 1 ) === FILL_ME_IN);
+
+/*
+ * Double click here to edit reality
+ *
+ * Then click [Meditate] to test whether you have gained enlightenment
+ */
+    </pre></dd>
+
+<!-- Slide 4 -->
+    <dt>More on how koans work...</dt>
+    <dd><pre>
+//Sometimes we just want to see what's going on
+var theAnswer = 6 * 7;
+log( "Just a simple log", "of", "values.", theAnswer );
+
+//And other times we want to avoid causing an error
+if (6 * 7 !== FILL_ME_IN ) {
+    error( "I'm an error!" );
+} else {
+    assert(true);
+}
+    </pre></dd>
+
+<!-- Slide 5 -->
+    <dt>First class functions</dt>
+    <dd></dd>
+
+    <!-- Slide 4 -->
+    <dt>Let us meditate on first class functions</dt>
+    <dd><pre>
+/*
+*  A language supports first-class functions when:
+*
+* (1) You can bind an identifier to the function,
+*     i.e. you can give it a name
+*
+* (2) You can store the function in a data structure (e.g: a list)
+*
+* (3) You can pass the function as an argument in another function call
+*
+* (4) You can return a function from another function
+*/
+    </pre></dd>
+
+<!-- Slide 6 -->
+<dt>Giving functions names</dt>
+<dd><pre>
+var add = function(x, y) {
+  return x + y;
+};
+
+var result = add(2, 3);
+assert(result === FILL_ME_IN, "Execute a named function using ()");
+
+var alsoAdd = add;
+
+assert(alsoAdd(1, 6) === FILL_ME_IN, "Named functions behave just like other variables");
+</pre></dd>
+
+<!-- Slide 7 -->
+<dt>Storing functions in data structures</dt>
+<dd><pre>
+var result = 0;
+
+var add = function(x, y) {
+  return x + y;
+};
+
+var subtract = function(x, y) {
+    return x - y;
+};
+
+var operations = [add, subtract, add, subtract, subtract, add, add];
+
+for (i in operations) {
+    result = operations[i](result,5);
+    // log("result is now:", result);
+}
+
+assert(result === FILL_ME_IN, "what is the final result?");
+</pre></dd>
+
+<!-- Slide 8 -->
+<dt>Passing a function as an argument to another function call</dt>
+<dd><pre>
+var afterMeditation = function(knowledge) {
+    assert(knowledge === FILL_ME_IN, "what knowledge has been accumulated");
+};
+
+var thinkLongAndHard = function(fact1, fact2, afterThinking) {
+    var result = fact1 + ';' + fact2;
+    afterThinking(result);
+};
+
+thinkLongAndHard('wind', 'rain', afterMeditation);
+</pre></dd>
+
+<!-- Slide 9 -->
+<dt>You can return a function from another function</dt>
+<dd><pre>
+var powerFactory = function(power) {
+        return function(number) {
+            var result = 1;
+            for(var i = 0; i < power; i++) {
+                result = result * number;
+            }
+            return result;
+        }
+    };
+
+var squared = powerFactory(2);
+var cubed = powerFactory(3);
+
+assert(squared(2) + cubed(3) === FILL_ME_IN, "functions can create new functions");
+</pre></dd>
+
+<!-- Slide 10 -->
+<dt>Higher order functions</dt>
+<dd></dd>
+
+<!-- Slide 11 -->
+<dt>First class functions make common operations with collections easy</dt>
+<dd><pre>
+/*
+ * The following are known as higher order functions:
+ *
+ * (1) each
+ * (2) map
+ * (3) filter
+ * (4) reduce
+ * (5) all
+ * (6) any
+ * (7) range
+ * (8) flatten
+ *
+ * because they apply a function to a list in a common way.
+ * (We use the underscore.js library to ensure these are
+ *  applied consistently across all browsers)
+ *
+*/
+</pre></dd>
+
+<!-- Slide 12 -->
+<dt>Each</dt>
+<dd><pre>
+/* Iterates over a list of elements, yielding each in turn to an iterator function. */
+
+    var numbers = [1,2,3];
+    var msg = "";
+    var isEven = function(item) {
+      msg += (item % 2) === 0;
+    };
+
+    _.each(numbers, isEven);
+
+    assert(msg === FILL_ME_IN, "isEven was called once for each element");
+    assert(numbers === FILL_ME_IN, "but the original list wasn't touched");
+</pre></dd>
+
+<!-- Slide 13 -->
+<dt>Map</dt>
+<dd><pre>
+/* Produces a new array of values by mapping each value in list through a transformation function (iterator). */
+
+    var numbers = [1, 2, 3];
+    var numbersPlus1 = _.map(numbers, function(x) { return x + 1 });
+
+    assert(numbersPlus1 === FILL_ME_IN, "each element is the result of the function applied to the original list");
+    assert(numbers === FILL_ME_IN, "but the original list wasn't touched");
+</pre></dd>
+
+<!-- Slide 14 -->
+<dt>Filter</dt>
+<dd><pre>
+/* Looks through each value in the list, returning an array of all the values that pass a truth test (iterator) */
+
+    var numbers = [1,2,3];
+    var odd = _(numbers).filter(function (x) { return x % 2 !== 0 });
+
+    assert(odd === FILL_ME_IN, "should only contain odd");
+    assert(numbers === FILL_ME_IN, "but the original list isn't touched");
+</pre></dd>
+
+<!-- Slide 15 -->
+<dt>Reduce</dt>
+<dd><pre>
+/* Reduce boils down a list of values into a single value. */
+
+    var numbers = [1, 2, 3];
+    var reduction = _(numbers).reduce(
+            function(/* result from last call */ memo, /* current */ x) { return memo + x }, /* initial */ 0);
+
+    assert(reduction === FILL_ME_IN, "should be the cumulative sum");
+    assert(numbers === FILL_ME_IN, "but the original list isn't touched");
+</pre></dd>
+
+<!-- Slide 16 -->
+<dt>All</dt>
+<dd><pre>
+/* Returns true if all of the values in the list pass the iterator truth test */
+
+    var onlyEven = [2,4,6];
+    var mixedBag = [2,4,5,6];
+
+    var isEven = function(x) { return x % 2 === 0 };
+
+    assert(_(onlyEven).all(isEven) === FILL_ME_IN, "are _all_ of the list items even?");
+    assert(_(mixedBag).all(isEven) === FILL_ME_IN, "leave the original list alone!");
+</pre></dd>
+
+<!-- Slide 17 -->
+<dt>Any</dt>
+<dd><pre>
+/* Returns true if any of the values in the list pass the iterator truth test.
+ * Short-circuits and stops traversing the list if a true element is found.
+ */
+
+    var onlyEven = [2,4,6];
+    var mixedBag = [2,4,5,6];
+
+    var isEven = function(x) { return x % 2 === 0 };
+
+    assert(_(onlyEven).any(isEven) === FILL_ME_IN, "are any of the list items even?");
+    assert(_(mixedBag).any(isEven) === FILL_ME_IN, "leave the original list alone!");
+</pre></dd>
+
+<!-- Slide 18 -->
+<dt>Range</dt>
+<dd><pre>
+/* A function to create flexibly-numbered lists of integers, handy for each and map loops. */
+
+    assert(_.range(3) === FILL_ME_IN, "should have 3 elements");
+    assert(_.range(1, 4) === FILL_ME_IN, "should start at 1 and end at 4 (exclusive)" );
+    assert(_.range(0, -4, -1) === FILL_ME_IN, "should increment in steps of -1");
+</pre></dd>
+
+<!-- Slide 19 -->
+<dt>Flatten</dt>
+<dd><pre>
+/* A function to create flexibly-numbered lists of integers, handy for each and map loops. */
+    expect(_([ [1, 2], [3, 4] ]).flatten() === FILL_ME_IN);
+</pre></dd>
+
+<!-- Slide 20 -->
+<dt>Chain</dt>
+<dd><pre>
+/* Returns a wrapped object.
+ * Calling methods on this object will continue to return wrapped objects until value is used.
+ */
+
+    var result = _([ [0, 1], 2 ]).chain()
+                       .flatten()
+                       .map(function(x) { return x+1 } )
+                       .reduce(function (sum, x) { return sum + x })
+                       .value();
+
+    assert(result === FILL_ME_IN);
+</pre></dd>
+
+
+<!-- Slide 21 -->
+<dt>Continuations</dt>
+<dd></dd>
+
+<!-- Slide 22 -->
+<dt>Define what happens later</dt>
+<dd><pre>
+var doWork = function(amount, onDone, onError) {
+    var workOutput = _.range(amount)
+                      .map(function(number) {
+                            if (number > 10)
+                                return 'ERROR';
+                            return number;
+                      });
+    if (_.any(workOutput, function(item) { return item === 'ERROR'; }))  {
+        onError(amount + ' is larger than 10');
+    } else {
+        onDone(workOutput);
+    }
+};
+
+var result = '';
+
+var whenDone = function(workOutput) { result = 'All done'; };
+var logError = function(msg) { result = msg; };
+
+doWork(5, whenDone, logError);
+assert(result === FILL_ME_IN, "which 'continuation' function gets called?");
+
+doWork(20, whenDone, logError);
+assert(result === FILL_ME_IN, "which 'continuation' function gets called now?");
+
+</pre></dd>
+
+<!-- Slide 23 -->
+<dt>Continuations enable async programming</dt>
+<dd><pre>
+/* In Javascript you can only make asynchronous network calls
+
+   The library function
+
+        CIAPI.services.GetPriceBars(marketId, priceBars, success, error)
+
+   makes a network call to the CityIndex API to fetch some historic price data
+
+*/
+
+    //Meditate on the following
+    CIAPI.services.GetPriceBars(51, 2,
+        function(data) { log(data); },
+        function(errorData) { error(errorData); }
+    );
+
+/* **************************************************************
+    Now, how would you fetch a collection of 10 market's price data,
+    and identify which ones 3 consecutive rising bars.
+   ************************************************************* */
+
+    //hint - map() a range() to CIAPI.services.GetPriceBars() and
+    //do your processing in the success() continuation
+</pre></dd>
+
+<!-- Slide 24 -->
+<dt>Applying our enlightenment</dt>
+<dd></dd>
+
+<!-- Slide 25 -->
+<dt>Applying our enlightenment</dt>
+<dd><pre>
+    var products = [
+       { name: "Sonoma", ingredients: ["artichoke", "sundried tomatoes", "mushrooms"], containsNuts: false },
+       { name: "Pizza Primavera", ingredients: ["roma", "sundried tomatoes", "goats cheese", "rosemary"], containsNuts: false },
+       { name: "South Of The Border", ingredients: ["black beans", "jalapenos", "mushrooms"], containsNuts: false },
+       { name: "Blue Moon", ingredients: ["blue cheese", "garlic", "walnuts"], containsNuts: true },
+       { name: "Taste Of Athens", ingredients: ["spinach", "kalamata olives", "sesame seeds"], containsNuts: true }
+    ];
+
+   /* Given I'm allergic to nuts and hate mushrooms, find a pizza I can eat (imperative) */
+
+    var i,j,hasMushrooms, productsICanEat = [];
+
+    for (i = 0; i < products.length; i+=1) {
+        if (products[i].containsNuts === false) {
+            hasMushrooms = false;
+            for (j = 0; j < products[i].ingredients.length; j+=1) {
+               if (products[i].ingredients[j] === "mushrooms") {
+                  hasMushrooms = true;
+               }
+            }
+            if (!hasMushrooms) productsICanEat.push(products[i]);
+        }
+    }
+
+    assert(productsICanEat.length == FILL_ME_IN);
+
+    /* now solve in a functional style */
+
+    productsICanEat = [];
+
+    /* try using filter() & all() / any() */
+
+    assert(productsICanEat.length === FILL_ME_IN);
+
+</pre></dd>
+
+<!-- Slide 26 -->
+<dt>Go forth</dt>
+<dd><pre>
+  /* Congratulations grasshopper, you have reached the first level of
+   * functional enlightenment!
+   *
+   * Remember to take this new awareness with you when solving
+   * everyday problems - you will find that many of your
+   * existing tools contain functional elements, and that these
+   * can greatly simplify a certain class of problems
+   */
+</pre></dd>
+
+</dl>
+</body>
+</html>
