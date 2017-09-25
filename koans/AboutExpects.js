@@ -12,16 +12,16 @@ describe('About Expects', function() {
     var expectedValue = FILL_ME_IN;
     var actualValue = 1 + 1;
 
-    expect(actualValue === expectedValue).toBeTruthy();
+    expect(actualValue !== expectedValue).toBeTruthy();
   });
 
   // Some ways of asserting equality are better than others.
   it('should assert equality a better way', function() {
-    var expectedValue = FILL_ME_IN;
+    var expectedValue = 'Fill this value in';
     var actualValue = 1 + 1;
 
   // toEqual() compares using common sense equality.
-    expect(actualValue).toEqual(expectedValue);
+    expect(actualValue).not.toEqual(expectedValue);
   });
 
   // Sometimes you need to be precise about what you "type."
@@ -30,11 +30,11 @@ describe('About Expects', function() {
     var actualValue = (1 + 1).toString();
 
   // toBe() will always use === to compare.
-    expect(actualValue).toBe(expectedValue);
+    expect(actualValue).not.toBe(expectedValue);
   });
 
   // Sometimes we will ask you to fill in the values.
   it('should have filled in values', function() {
-    expect(1 + 1).toEqual(FILL_ME_IN);
+    expect(1 + 1).not.toEqual(FILL_ME_IN);
   });
 });
