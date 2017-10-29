@@ -1,5 +1,3 @@
-// 여기는... 이해가 ... ㅠ_ㅠ
-
 function Muppet(age, hobby) {
   this.age = age;
   this.hobby = hobby;
@@ -27,19 +25,19 @@ describe("Inheritance", function() {
   });
 
   it("상속받은 method를 사용할 수 있다.", function() {
-    expect(this.swedishChef.cook()).toEqual("Mmmm soup!"); // "Mmmm soup!"
+    expect(this.swedishChef.cook()).toEqual("Mmmm soup!");
   });
 
   it("일반 method도 사용할 수 있다.", function() {
-    expect(this.swedishChef.answerNanny()).toEqual("Everything's cool!"); // "Everything's cool!"
+    expect(this.swedishChef.answerNanny()).toEqual("Everything's cool!");
   });
 
   it("부모 Constructor에서 생성한 property들을 갖고 있다.", function() {
-    expect(this.swedishChef.age).toEqual(2); // 2
-    expect(this.swedishChef.hobby).toEqual("cooking"); // "cooking"
+    expect(this.swedishChef.age).toEqual(2);
+    expect(this.swedishChef.hobby).toEqual("cooking");
   });
 
   it("Constructor에서 생성한 property를 갖고 있다.", function() {
-    expect(this.swedishChef.mood).toEqual("chillin"); // "chillin"
+    expect(this.swedishChef.mood).toEqual("chillin");
   });
 });

@@ -8,11 +8,11 @@ describe("Arrays", function() {
 
     var multiTypeArray = [0, 1, "two", function () { return 3; }, {value1: 4, value2: 5}, [6, 7]];
     expect(multiTypeArray[0]).toBe(0);
-    expect(multiTypeArray[2]).toBe('two');
+    expect(multiTypeArray[2]).toBe("two");
     expect(multiTypeArray[3]()).toBe(3);
     expect(multiTypeArray[4].value1).toBe(4);
     expect(multiTypeArray[4]["value2"]).toBe(5);
-    expect(multiTypeArray[5][0]).toBe(6);
+    expect(multiTypeArray[5][0]).toBe(6,7,0);
   });
 
   it("Array Literals로 만들기", function () {
@@ -27,7 +27,7 @@ describe("Arrays", function() {
     expect(array).toEqual([1, 2]);
 
     array.push(3);
-    expect(array).toEqual([1,2,3]);
+    expect(array).toEqual([1, 2, 3]);
   });
 
   it("Array의 length", function () {
@@ -98,11 +98,11 @@ describe("Arrays", function() {
     // FILL_ME_IN을 수정해주세요!
     var array = [1, 2];
 
-    array.unshift(3);// .unshift = 앞에 요소 추가해라!
-    expect(array).toEqual([3,1,2]);
+    array.unshift(3);
+    expect(array).toEqual([3, 1, 2]);
 
-    var shiftedValue = array.shift();// .shift = 0번째 요소를 제거하고 나머지 값들의 위치를 한칸씩 앞으로 당기고, 제거된 값은 반환 한다. 그래서 106전째 줄 이 되는거다.
-    expect(shiftedValue).toEqual(3); // .shift 로 인해 반환된 것
-    expect(array).toEqual([1,2]); // ??
+    var shiftedValue = array.shift();
+    expect(shiftedValue).toEqual(3);
+    expect(array).toEqual([1, 2]);
   });
 });

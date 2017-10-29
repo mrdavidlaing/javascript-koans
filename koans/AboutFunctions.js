@@ -22,7 +22,7 @@ describe("Functions", function() {
       return message;
     }
 
-    expect(getMessage()).toBe(message);
+    expect(getMessage()).toBe("Outer");
     expect(overrideMessage()).toBe("Inner");
     expect(message).toBe("Outer");
   });
@@ -50,7 +50,7 @@ describe("Functions", function() {
       return firstArg;
     }
 
-    expect(returnFirstArg("first", "second", "third")).toBe("first", "second", "third");
+    expect(returnFirstArg("first", "second", "third")).toBe("first");
 
     function returnSecondArg(firstArg, secondArg) {
       return secondArg;
@@ -69,20 +69,18 @@ describe("Functions", function() {
     expect(returnAllArgs("first", "second", "third")).toBe("first,second,third");
   });
 
-
-// 질문
   it("함수 사용하기", function () {
 
     var appendRules = function (name) {
       return name + " rules!";
-    };// name "rules!"
+    };
 
     var appendDoubleRules = function (name) {
       return name + " totally rules!";
-    };// name "totally rules!"
+    };
 
     var praiseSinger = { givePraise: appendRules };
-    expect(praiseSinger.givePraise("John")).toBe("John rules!")
+    expect(praiseSinger.givePraise("John")).toBe("John rules!");
 
     praiseSinger.givePraise = appendDoubleRules;
     expect(praiseSinger.givePraise("Mary")).toBe("Mary totally rules!");
