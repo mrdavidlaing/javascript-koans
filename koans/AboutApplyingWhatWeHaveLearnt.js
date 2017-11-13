@@ -6,11 +6,11 @@ describe("About Applying What We Have Learnt", function() {
 
   beforeEach(function () {
     products = [
-       { name: "Sonoma", ingredients: ["artichoke", "sundried tomatoes", "mushrooms"], containsNuts: false },
+       { name: "Sonoma", ingredients: ["artichoke", "sundried tomatoes", "mushrooms"], containsNuts: false }, // есть грибы
        { name: "Pizza Primavera", ingredients: ["roma", "sundried tomatoes", "goats cheese", "rosemary"], containsNuts: false },
-       { name: "South Of The Border", ingredients: ["black beans", "jalapenos", "mushrooms"], containsNuts: false },
-       { name: "Blue Moon", ingredients: ["blue cheese", "garlic", "walnuts"], containsNuts: true },
-       { name: "Taste Of Athens", ingredients: ["spinach", "kalamata olives", "sesame seeds"], containsNuts: true }
+       { name: "South Of The Border", ingredients: ["black beans", "jalapenos", "mushrooms"], containsNuts: false }, // есть грибы
+       { name: "Blue Moon", ingredients: ["blue cheese", "garlic", "walnuts"], containsNuts: true }, // есть орехи
+       { name: "Taste Of Athens", ingredients: ["spinach", "kalamata olives", "sesame seeds"], containsNuts: true }  // есть орехи
     ];
   });
 
@@ -32,7 +32,7 @@ describe("About Applying What We Have Learnt", function() {
         }
     }
 
-    expect(productsICanEat.length).toBe(FILL_ME_IN);
+    expect(productsICanEat.length).toBe(1);
   });
 
   it("given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (functional)", function () {
@@ -41,7 +41,21 @@ describe("About Applying What We Have Learnt", function() {
 
       /* solve using filter() & all() / any() */
 
-      expect(productsICanEat.length).toBe(FILL_ME_IN);
+      [].filter.call( products, function (elemArr1) {
+          if( elemArr1.containsNuts === false ){
+              hasMushrooms = false;
+              _(elemArr1.ingredients).any(function (elemArr2) {
+                  if( elemArr2 === "mushrooms") {
+                      hasMushrooms = true;
+                  }
+              });
+              if (!hasMushrooms){
+                  productsICanEat.push(elemArr1);
+              }
+          }
+      });
+
+      expect(productsICanEat.length).toBe(1);
   });
 
   /*********************************************************************************/
@@ -55,14 +69,21 @@ describe("About Applying What We Have Learnt", function() {
       }
     }
 
-    expect(sum).toBe(FILL_ME_IN);
+    expect(sum).toBe(233168);
   });
 
   it("should add all the natural numbers below 1000 that are multiples of 3 or 5 (functional)", function () {
 
-    var sum = FILL_ME_IN;    /* try chaining range() and reduce() */
+    /* try chaining range() and reduce() */
+    /*прооверить!!!*/
+    var sum = _.range(1, 1000).reduce( function(sum, number) {
+      if (number % 3 === 0 || number % 5 === 0) {
+        return sum + number;
+      } else {
+        return sum;
+      }},0);
 
-    expect(233168).toBe(FILL_ME_IN);
+    expect(233168).toBe(sum);
   });
 
   /*********************************************************************************/
@@ -75,15 +96,26 @@ describe("About Applying What We Have Learnt", function() {
         }
     }
 
-    expect(ingredientCount['mushrooms']).toBe(FILL_ME_IN);
+    expect(ingredientCount['mushrooms']).toBe(2);
   });
 
   it("should count the ingredient occurrence (functional)", function () {
-    var ingredientCount = { "{ingredient name}": 0 };
+      var ingredientCount = { "{ingredient name}": 0 };
+
+      addCountIngredients();
+
+      function addCountIngredients() {
+          return _(products).chain()
+              .map(function(elementArr) { return elementArr.ingredients })
+
+              .flatten()
+              .reduce(function(first, i) { return ingredientCount[i] = (ingredientCount[i] || 0) + 1 })
+              .value();
+      }
 
     /* chain() together map(), flatten() and reduce() */
 
-    expect(ingredientCount['mushrooms']).toBe(FILL_ME_IN);
+    expect(ingredientCount['mushrooms']).toBe(addCountIngredients());
   });
 
   /*********************************************************************************/
