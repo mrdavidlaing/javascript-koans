@@ -32,16 +32,20 @@ describe("About Applying What We Have Learnt", function() {
         }
     }
 
-    expect(productsICanEat.length).toBe(FILL_ME_IN);
+    expect(productsICanEat.length).toBe(1);
   });
 
   it("given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (functional)", function () {
 
-      var productsICanEat = [];
+      var productsICanEat = _.filter(products, function(val) {
+        if (val.containsNuts===false) {
+          return _.all(val.ingredients, function(value) {return value !== `mushrooms`});
+        }
+      });
 
       /* solve using filter() & all() / any() */
 
-      expect(productsICanEat.length).toBe(FILL_ME_IN);
+      expect(productsICanEat.length).toBe(1);
   });
 
   /*********************************************************************************/
@@ -55,14 +59,16 @@ describe("About Applying What We Have Learnt", function() {
       }
     }
 
-    expect(sum).toBe(FILL_ME_IN);
+    expect(sum).toBe(233168);
   });
 
   it("should add all the natural numbers below 1000 that are multiples of 3 or 5 (functional)", function () {
 
-    var sum = FILL_ME_IN;    /* try chaining range() and reduce() */
+    var sum = _.reduce(_.range(1000), function(mem,value,i) {
+        return i % 3 === 0 || i % 5 === 0 ?  mem+value : mem+0;
+      },0);;    /* try chaining range() and reduce() */
 
-    expect(233168).toBe(FILL_ME_IN);
+    expect(233168).toBe(sum);
   });
 
   /*********************************************************************************/
@@ -75,15 +81,27 @@ describe("About Applying What We Have Learnt", function() {
         }
     }
 
-    expect(ingredientCount['mushrooms']).toBe(FILL_ME_IN);
+    expect(ingredientCount['mushrooms']).toBe(2);
   });
-
+  _.chain = function(obj) { // I do not now why, but without the function I have a mistake: func _.chain not found
+    var instance = _(obj); // I use full library underscore.js and I did not have the mistake!
+    instance._chain = true;
+    return instance;
+  };
   it("should count the ingredient occurrence (functional)", function () {
+
     var ingredientCount = { "{ingredient name}": 0 };
+      _.chain(products)
+      .flatten()
+      .map(function(elem) {return elem.ingredients})
+      .flatten()
+      .reduce(function(blabla, val) {
+        ingredientCount[val] = (ingredientCount[val] || 0) +1;
+        return ingredientCount;
+      })
+      .value();
 
-    /* chain() together map(), flatten() and reduce() */
-
-    expect(ingredientCount['mushrooms']).toBe(FILL_ME_IN);
+    expect(ingredientCount['mushrooms']).toBe(2);
   });
 
   /*********************************************************************************/
