@@ -66,11 +66,11 @@ describe("About Arrays", function() {
 
     var assignedArray = array;
     assignedArray[5] = "changed in assignedArray";
-    expect(array[5]).toBe([]);
+    expect(array[5]).toBe("changed in assignedArray");
 
     var copyOfArray = array.slice();
     copyOfArray[3] = "changed in copyOfArray";
-    expect(array[3]).toBe("changed in copyOfArray");
+    expect(array[3]).toBe("three");
   });
 
   it("should push and pop", function () {
