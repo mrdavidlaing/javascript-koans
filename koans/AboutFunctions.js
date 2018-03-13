@@ -38,7 +38,7 @@ describe("About Functions", function() {
     expect(parentfunction()).toBe("local");
   });
 
-  // не совсем понял что тут происходит
+  // не совсем понял, что тут происходит
   it("should use lexical scoping to synthesise functions", function () {
 
     function makeMysteryFunction(makerValue)
