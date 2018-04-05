@@ -1,0 +1,357 @@
+[33mcommit 2c82e36eb8532d38eb9bfe77023f06aa76ee3ff1[m[33m ([m[1;36mHEAD -> [m[1;32msolution[m[33m)[m
+Author: OlegTsurbanov <shwed@mail.ru>
+Date:   Thu Apr 5 19:41:30 2018 +0300
+
+    fill me in replace 2
+
+[33mcommit 1593981b62a63734f70ac9a959e850680c93aac8[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: Cho S. Kim <choskim.me@gmail.com>
+Date:   Tue Dec 15 23:01:33 2015 -0800
+
+    Update syntax and comments in koans/AboutExpects.js
+
+[33mcommit c37f44d1d1bb77a9421e33667a5d97be5018f419[m
+Merge: 775b195 674863c
+Author: Cho S. Kim <choskim.me@gmail.com>
+Date:   Tue Dec 15 21:18:25 2015 -0800
+
+    Merge branch 'readme'
+
+[33mcommit 674863c9b5e4a7d5e3dc9b86159837dc8e3cdd6a[m
+Author: Cho S. Kim <choskim.me@gmail.com>
+Date:   Tue Dec 15 21:17:12 2015 -0800
+
+    Add correct hyperlink for jasmine in README.md
+
+[33mcommit 775b1958b3a685d6c554c9b4bb5687f84b2eb8c1[m
+Merge: 5f83a47 408fd3d
+Author: Cho S. Kim <choskim@users.noreply.github.com>
+Date:   Tue Dec 15 21:02:34 2015 -0800
+
+    Merge pull request #63 from mrdavidlaing/readme
+    
+    Update headers in README.md
+
+[33mcommit 408fd3d0608a149c0219481ac44dc5cb8d373763[m
+Author: Cho S. Kim <choskim.me@gmail.com>
+Date:   Tue Dec 15 21:01:29 2015 -0800
+
+    Update headers in README.md
+
+[33mcommit 5f83a4716838027e1aa38b6c84e54590022d3a2c[m
+Merge: bdf23a5 307bf10
+Author: Greg Malcolm <greg@gregmalcolm.com>
+Date:   Sun Mar 16 01:14:24 2014 -0400
+
+    Merge pull request #30 from choskim/aboutExpects
+    
+    fixes indentation for comments and punctuation mistakes.
+
+[33mcommit bdf23a56be55f30f43bcd48308aa1a4d44a22105[m
+Merge: f3cb0f6 73d903b
+Author: Greg Malcolm <greg@gregmalcolm.com>
+Date:   Sun Mar 16 01:09:36 2014 -0400
+
+    Merge pull request #29 from choskim/license
+    
+    updates the LICENSE to include a proper header, a range of years for copyright...
+
+[33mcommit 307bf101d349faca15ab3ade9361b41cc03068e7[m
+Author: Cho S. Kim <4cho.kim@gmail.com>
+Date:   Sat Mar 15 14:16:20 2014 -0700
+
+    updates all comments in aboutExpects.js to have one space (not two spaces) after the slashes.
+
+[33mcommit 08832bdf1e6f6994f6a43535d2ec84513d05f007[m
+Author: Cho S. Kim <4cho.kim@gmail.com>
+Date:   Fri Mar 14 20:26:25 2014 -0700
+
+    removes extra quotation mark
+
+[33mcommit b8c7a03d5abc6e2400bf70a13f481b46eadf525f[m
+Author: Cho S. Kim <4cho.kim@gmail.com>
+Date:   Fri Mar 14 20:24:09 2014 -0700
+
+    fixes indentation for comments and a punctuation mistake.
+
+[33mcommit 73d903b5cae37cc30d055e3ed834c27f00e839a9[m
+Author: Cho S. Kim <4cho.kim@gmail.com>
+Date:   Thu Mar 13 23:34:57 2014 -0700
+
+    updates the LICENSE to include a proper header, a range of years for copyright, and a list of authors.
+
+[33mcommit f3cb0f6e903b649f84d8a46ded4941554db46c07[m
+Merge: 8300368 bce7da3
+Author: Greg Malcolm <greg@gregmalcolm.com>
+Date:   Thu Dec 19 07:18:30 2013 -0800
+
+    Merge pull request #28 from useffc/master
+    
+    corrected misspelling in "megalomaniac" instances
+
+[33mcommit bce7da375035f118b07297b22a60e6af4de72e16[m
+Author: useff <useffc@gmail.com>
+Date:   Wed Dec 18 15:35:30 2013 -0500
+
+    corrected misspelling in "megalomaniac" instances
+
+[33mcommit 8300368764ef858e7d4403a98d0e0d49eaedf8a8[m
+Merge: 860dae7 44b1af3
+Author: Aaron Cruz <aaron@aaroncruz.com>
+Date:   Tue Dec 3 00:38:16 2013 -0800
+
+    Merge pull request #26 from jonasac/patch-1
+    
+    Fix missing semicolon.
+
+[33mcommit 44b1af3e7a7f557307228665d1a8f00c0476590c[m
+Author: Jonas Arnold Clasen <jonas.clasen@gmail.com>
+Date:   Sat Nov 30 00:57:31 2013 +0100
+
+    Fix missing semicolon.
+
+[33mcommit 860dae7c4bba9585ee3272cc5b2f0777a6b62f69[m
+Merge: 27ad9ab b3e40cd
+Author: David Laing <david@davidlaing.com>
+Date:   Mon May 20 16:05:23 2013 -0700
+
+    Merge pull request #24 from morty/patch-1
+    
+    Small indentation fix
+
+[33mcommit b3e40cd0267f8aa4aa0553b6d7b1ee420d719b50[m
+Author: Tom Mortimer-Jones <tom@morty.co.uk>
+Date:   Sun May 19 21:56:40 2013 +0200
+
+    Small indentation fix
+
+[33mcommit 27ad9ab3ccf6a12f7736d24740e5a7f13d850501[m
+Author: Aaron Cruz <aaron@aaroncruz.com>
+Date:   Fri Apr 12 13:16:54 2013 +0200
+
+    Removed troublesome function koan. Fixes #9. Fixes #10.
+    
+    Determined "should use function body as a string" is causes more
+    problems than the understanding it provides.
+    If someone can think of a good replacement, submit it, it has been
+    removed until then.
+
+[33mcommit 6e9e0d19709ab37e4ac8d387fe957ead1c51878e[m
+Merge: dd71c36 20fc218
+Author: David Laing <david@davidlaing.com>
+Date:   Fri Apr 12 04:08:30 2013 -0700
+
+    Merge pull request #22 from pferdefleisch/remove-tabs-and-whitespace-from-specs
+    
+    Replaces tabs with 2 spaces and removes whitespace from specs
+
+[33mcommit 20fc21865125d6b2187039a749b8618504c2e62d[m
+Author: Aaron Cruz <aaron@aaroncruz.com>
+Date:   Fri Apr 12 13:05:18 2013 +0200
+
+    Replaces tabs with 2 spaces and removes whitespace from specs
+
+[33mcommit dd71c3682cb9aa098318c9b33305fd5f5fa20deb[m
+Merge: dc6daac 60a9671
+Author: David Laing <david.laing@cityindex.co.uk>
+Date:   Fri Feb 15 12:55:33 2013 -0800
+
+    Merge pull request #18 from magopian/patch-1
+    
+    Update koans/AboutArrays.js
+
+[33mcommit 60a96715acff3cdec1d67396bd4af4ff5914b8ec[m
+Author: Mathieu Agopian <mathieu.agopian@gmail.com>
+Date:   Fri Feb 15 21:54:04 2013 +0100
+
+    Update koans/AboutArrays.js
+    
+    typo in the url for "remedial javascript"
+
+[33mcommit dc6daac126bd8c8570b74d69d6fa916e2bd60d11[m
+Merge: 64317bd 5ee5cc4
+Author: David Laing <david.laing@cityindex.co.uk>
+Date:   Fri Dec 28 07:41:51 2012 -0800
+
+    Merge pull request #17 from blazingcloud/master
+    
+    Fix for Issue #: Obfuscate variable and function names to aid true understanding
+
+[33mcommit 5ee5cc45cd84bf3bd0850d2fd090d5ac2d9e99cf[m
+Author: Sarah Allen <sarah@ultrasaurus.com>
+Date:   Fri Dec 28 07:35:37 2012 -0800
+
+    Obfuscate variable and function names to aid true understanding -- suggested by timoxley
+
+[33mcommit 64317bdb920b2907d04a33794fdc2f1a03afe7be[m
+Merge: ff8f175 ee4baf8
+Author: David Laing <david@davidlaing.com>
+Date:   Tue Jul 31 15:32:39 2012 -0700
+
+    Merge pull request #16 from sunesimonsen/patch-1
+    
+    Made global variables local
+
+[33mcommit ee4baf887b97866bc97a0704cfad48edf65fb442[m
+Author: Sune Simonsen <sune@we-knowhow.dk>
+Date:   Tue Jul 31 20:38:20 2012 +0300
+
+    Made global variables local
+
+[33mcommit ff8f17501238715aad5e7c5719d270b1625d5a09[m
+Merge: 656fd24 431f0ec
+Author: David Laing <david@davidlaing.com>
+Date:   Mon May 14 10:59:25 2012 -0700
+
+    Merge pull request #15 from wyattdanger/master
+    
+    Inconsistent braces
+
+[33mcommit 431f0ec7a8e20411bf4a031d6369f971872ed410[m
+Author: Stephen Wyatt Bush <stephen.wyatt@gmail.com>
+Date:   Sun May 13 22:22:58 2012 -0300
+
+    Making function braces consistent
+
+[33mcommit 656fd248cf972cdb41b7df0bb00ad88e2062fb7f[m
+Merge: e3bb788 7d392e3
+Author: Greg Malcolm <greg@gregmalcolm.com>
+Date:   Sun Jan 1 18:56:47 2012 -0800
+
+    Merge pull request #14 from jfraser/patch-2
+    
+    Corrected typo "Please medit(i)ate on the following code:"
+
+[33mcommit e3bb78808d4cb37e9f631dd5170db5d7e2ace355[m
+Merge: d86a9df 122eeff
+Author: Greg Malcolm <greg@gregmalcolm.com>
+Date:   Sun Jan 1 18:56:15 2012 -0800
+
+    Merge pull request #13 from jfraser/patch-1
+    
+    Fixed natural summing specs
+
+[33mcommit 7d392e35e12a9ce3664531c82fbec738190553fc[m
+Author: James Fraser <jfraser@thoughtworks.com>
+Date:   Wed Dec 28 12:05:51 2011 +1100
+
+    Corrected typo "Please medit(i)ate on the following code:"
+
+[33mcommit 122eefff5b106f5ccb6c6330f0945ad0d00495c5[m
+Author: James Fraser <jfraser@thoughtworks.com>
+Date:   Wed Dec 28 12:01:47 2011 +1100
+
+    Fixed natural summing specs so that they are below 1000 rather than up to 1000.
+
+[33mcommit d86a9dfbf50d500bea35b4b6e1dd12b41c1c6dd4[m
+Author: David Laing <david@davidlaing.com>
+Date:   Mon May 30 12:29:34 2011 +0100
+
+    Remove About Lamda koans
+    
+    Signed-off-by: David Laing <david@davidlaing.com>
+
+[33mcommit 161842d9e6e3dd087c4af01b16ed9c243628e7be[m
+Author: David Laing <david@davidlaing.com>
+Date:   Mon May 30 12:28:09 2011 +0100
+
+    Rename __ to FILL_ME_IN to avoid confusion with underscore.js' _()
+    
+    Signed-off-by: David Laing <david@davidlaing.com>
+
+[33mcommit 31172948973fd8fed2e28ec435e0b30ae93b382e[m
+Author: David Laing <david@davidlaing.com>
+Date:   Mon May 30 12:25:34 2011 +0100
+
+    Replace dojox functional extensions with underscore.js
+    
+    Signed-off-by: David Laing <david@davidlaing.com>
+
+[33mcommit a2c27c03570fb7535bc5db841131139d918e15cf[m
+Merge: e0e43eb d0bf1e2
+Author: David Laing <david@davidlaing.com>
+Date:   Tue May 10 07:41:19 2011 -0700
+
+    Merge pull request #4 from minikomi/master
+    
+    Making format / grammar more consistent throughout
+
+[33mcommit d0bf1e2fe4eca1051e9c29a32eb252eea66e6c63[m
+Author: Adam Moore <nerdfunk@gmail.com>
+Date:   Tue May 10 21:12:09 2011 +0900
+
+    Changed wording and problem in asserts koan
+
+[33mcommit e0e43eb8561bcb342e18f993b391cf2c7617a8f2[m
+Author: gregmalcolm <greg@gregmalcolm.com>
+Date:   Thu Mar 24 18:47:32 2011 -0400
+
+    Still had a couple of actual/expected values transposed. Fixed.
+
+[33mcommit 9fdadacc7c6d4d4d7befdf626a3ebc95a4597609[m
+Author: gregmalcolm <greg@gregmalcolm.com>
+Date:   Thu Mar 24 07:26:35 2011 -0400
+
+    Revert "Greg's first massive contribution" (Wrong project. Oops..)
+    
+    This reverts commit ff21019ba4d73f6d5a8b471f3f5ed6341f379935.
+
+[33mcommit ff21019ba4d73f6d5a8b471f3f5ed6341f379935[m
+Author: gregmalcolm <greg@gregmalcolm.com>
+Date:   Thu Mar 24 07:23:11 2011 -0400
+
+    Greg's first massive contribution
+
+[33mcommit 6d1d0150a4ddc5714df536159a35b7ccd588a913[m
+Author: Sean Durham <sean@sdurham.net>
+Date:   Sat Jan 29 15:35:32 2011 -0800
+
+    Fixed a typo causing one koan group not to load properly. Those who once saw 49 koans in 9 groups will now see 55 koans in 10 groups.
+
+[33mcommit 4ec938e448903163caef89b145bfde6f06302924[m
+Author: Steve Horn <steve@stevehorn.cc>
+Date:   Fri Dec 31 07:37:48 2010 -0500
+
+    Adding missing Inheritance koan file
+
+[33mcommit 13ac2b7c5b9a8862c2c5f6fa001f455ddce3d521[m
+Author: mrdavidlaing <david@davidlaing.com>
+Date:   Mon Dec 13 19:47:18 2010 +0000
+
+    Re-add koans/AboutAsserts.js - thanks hakanson!
+
+[33mcommit 9511e0bcfe792eef76532e23e22163a18adb4512[m
+Author: David Laing <david@davidlaing.com>
+Date:   Sat Nov 6 15:33:56 2010 +0000
+
+    rename to javascript-koans
+
+[33mcommit 9191caa894a31aaa6c6a97ddd1c77c4292633ba1[m
+Author: David Laing <david@davidlaing.com>
+Date:   Sat Nov 6 15:19:18 2010 +0000
+
+    add .gitignore
+
+[33mcommit 3ee6b5ee5a5bc71ad37b49de345c53f18d7fcb23[m
+Author: David Laing <david@davidlaing.com>
+Date:   Sat Nov 6 15:12:38 2010 +0000
+
+    pulled final changes from https://github.com/mrdavidlaing/functional-koans
+
+[33mcommit 88d116e86908bc92d2538f01ee85d52a91d42ecc[m
+Author: David Laing <david@davidlaing.com>
+Date:   Sat Nov 6 15:07:17 2010 +0000
+
+    updated documentation to reflect new name
+
+[33mcommit 353f1f06cddaec9835efd801b4a0e159ea6700b2[m
+Author: David Laing <david@davidlaing.com>
+Date:   Sat Nov 6 14:56:50 2010 +0000
+
+    import from https://github.com/mrdavidlaing/functional-koans
+
+[33mcommit f4bf1d50d482948d4193b64e2857dbfaaf839a3b[m
+Author: David Laing <david@davidlaing.com>
+Date:   Sat Nov 6 14:53:02 2010 +0000
+
+    initial commit
