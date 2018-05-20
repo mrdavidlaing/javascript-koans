@@ -2,7 +2,7 @@ var _; //globals
 
 describe("About Applying What We Have Learnt", function() {
 
-  var products;
+  var products, compositeNumber;
 
   beforeEach(function () {
     products = [
@@ -12,6 +12,7 @@ describe("About Applying What We Have Learnt", function() {
        { name: "Blue Moon", ingredients: ["blue cheese", "garlic", "walnuts"], containsNuts: true },
        { name: "Taste Of Athens", ingredients: ["spinach", "kalamata olives", "sesame seeds"], containsNuts: true }
     ];
+    compositeNumber = 121;
   });
 
   /*********************************************************************************/
@@ -32,16 +33,17 @@ describe("About Applying What We Have Learnt", function() {
         }
     }
 
-    expect(productsICanEat.length).toBe(FILL_ME_IN);
+    expect(productsICanEat.length).toBe(1);
   });
 
   it("given I'm allergic to nuts and hate mushrooms, it should find a pizza I can eat (functional)", function () {
 
       var productsICanEat = [];
+      var isMushrooms = function (x) {return x !== "mushrooms"};
 
-      /* solve using filter() & all() / any() */
+      productsICanEat = _(products).filter(function(x) { return (!x.containsNuts  && _(x.ingredients).all(isMushrooms))});
 
-      expect(productsICanEat.length).toBe(FILL_ME_IN);
+      expect(productsICanEat.length).toBe(1);
   });
 
   /*********************************************************************************/
@@ -55,14 +57,14 @@ describe("About Applying What We Have Learnt", function() {
       }
     }
 
-    expect(sum).toBe(FILL_ME_IN);
+    expect(sum).toBe(233168);
   });
 
   it("should add all the natural numbers below 1000 that are multiples of 3 or 5 (functional)", function () {
 
-    var sum = FILL_ME_IN;    /* try chaining range() and reduce() */
 
-    expect(233168).toBe(FILL_ME_IN);
+    var sum = _(_.range(1,1000)).reduce(function (memo,x){ if(x % 3 === 0 || x % 5 === 0 ) {memo += x} return memo},0);    /* try chaining range() and reduce() */
+    expect(233168).toBe(sum);
   });
 
   /*********************************************************************************/
@@ -74,34 +76,40 @@ describe("About Applying What We Have Learnt", function() {
             ingredientCount[products[i].ingredients[j]] = (ingredientCount[products[i].ingredients[j]] || 0) + 1;
         }
     }
-
-    expect(ingredientCount['mushrooms']).toBe(FILL_ME_IN);
+    expect(ingredientCount['mushrooms']).toBe(2);
   });
 
   it("should count the ingredient occurrence (functional)", function () {
     var ingredientCount = { "{ingredient name}": 0 };
 
-    /* chain() together map(), flatten() and reduce() */
-
-    expect(ingredientCount['mushrooms']).toBe(FILL_ME_IN);
+    _(products).chain().map(function(x){return x.ingredients}).flatten().reduce(function(memo, x) {ingredientCount[memo] = (ingredientCount[memo] || 0) + 1; return memo = x}).value();
+   
+    expect(ingredientCount['mushrooms']).toBe(2);
   });
 
   /*********************************************************************************/
   /* UNCOMMENT FOR EXTRA CREDIT */
-  /*
+  
   it("should find the largest prime factor of a composite number", function () {
 
+  		var largestPrimeFactor = -1;
+  		largestPrimeFactor = (_.range(2,compositeNumber-1)).reverse().find(function(x){return ((compositeNumber % x === 0) && _(_.range(2,x)).all(function(y) {return (x % y !== 0) }))});
+
+  		expect(largestPrimeFactor).toBe(11);
   });
 
+  // it("should find the smallest number divisible by each of the numbers 1 to 20", function () {
+ 
+  	
+  // });
+
+  /*
   it("should find the largest palindrome made from the product of two 3 digit numbers", function () {
 
   });
 
-  it("should find the smallest number divisible by each of the numbers 1 to 20", function () {
 
-
-  });
-
+	
   it("should find the difference between the sum of the squares and the square of the sums", function () {
 
   });
