@@ -1,6 +1,6 @@
 describe('About Expects', function() {
 
-  // We shall contemplate truth by testing reality, via spec expectations.
+  // We shall contemplate truth by testing reality, via spe123 expectations.
   it('should expect true', function() {
 
     // Your journey begins here: Replace the word false with true 
