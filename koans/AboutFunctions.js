@@ -6,7 +6,7 @@ describe("About Functions", function() {
       return a + b;
     }
 
-    expect(add(1, 2)).toBe(FILL_ME_IN);
+    expect(add(1, 2)).toBe(3);
   });
 
   it("should know internal variables override outer variables", function () {
