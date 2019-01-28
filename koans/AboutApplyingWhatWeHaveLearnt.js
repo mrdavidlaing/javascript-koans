@@ -59,10 +59,17 @@ describe("About Applying What We Have Learnt", function() {
   });
 
   it("should add all the natural numbers below 1000 that are multiples of 3 or 5 (functional)", function () {
+ /* try chaining range() and reduce() */
+    var sum = 0;
+    var numbers = [];
+    numbers = this.chain().range(0,1000).reduce(function(num){
+          if(num % 3 === 0 || num % 5 === 0){
+             sum += sum + num; 
+          }
+        });
+      //  I had some trouble getting chain to work and wasn't exactly sure how to do this and the following problem because I was confused about how they were used in the previous exercises and whether or not I was supposed to be using underscore or not
 
-    var sum = FILL_ME_IN;    /* try chaining range() and reduce() */
-
-    expect(233168).toBe(233168);
+    expect(233168).toBe(sum);
   });
 
   /*********************************************************************************/
