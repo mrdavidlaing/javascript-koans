@@ -42,7 +42,7 @@ describe("About inheritance", function() {
   });
 });
 
-// https://crockford.com/javascript/prototypal.html
+// https://www.crockford.com/javascript/prototypal.html
 Object.prototype.beget = function () {
   function F() {}
   F.prototype = this;
