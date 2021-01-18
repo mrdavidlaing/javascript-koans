@@ -91,7 +91,7 @@ h1 {
 }
 
 .spec.passed, .spec.passed-skipped {
-  background-color: #075207;
+  background-color: #053305;
   border-color: green;
 }
 
@@ -115,7 +115,7 @@ h1 {
 }
 
 .passed {
-  background-color: #0b550b;
+  background-color: #053305;
   display: none;
 }
 
@@ -207,6 +207,7 @@ h1 {
   color: #7beea1;
   font-weight: bold;
 }
+
 .enlightenment-failed {
   background-color: #5f0d0d;
   color: #fff;
