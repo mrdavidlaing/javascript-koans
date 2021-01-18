@@ -1,5 +1,7 @@
 body {
   font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+  color: lightgray;
+  background-color: #002727;
 }
 
 h1 {
@@ -9,11 +11,11 @@ h1 {
 }
 
 .jasmine_reporter a:visited, .jasmine_reporter a {
-  color: #303; 
+  color: #c581fd; 
 }
 
 .jasmine_reporter a:hover, .jasmine_reporter a:active {
-  color: blue; 
+  color: #5858f8; 
 }
 
 .run_spec_failed, .run_spec_skipped {
@@ -32,8 +34,8 @@ h1 {
 }
 
 .banner {
-  color: #303;
-  background-color: #fef;
+  color: #fac0fa;
+  background-color: #2b062b;
   padding: 5px;
   font-size: 0.6em;
 }
@@ -55,7 +57,7 @@ h1 {
 }
 
 .suite {
-  border: 1px outset gray;
+  border: 1px outset #2b062b;
   margin: 5px 0;
   padding-left: 1em;
 }
@@ -65,11 +67,11 @@ h1 {
 }
 
 .suite.passed, .suite.passed-skipped {
-  background-color: #dfd;
+  background-color: #0e520e;
 }
 
 .suite.failed, .suite.failed-skipped {
-  background-color: #fdd;
+  background-color: #2b062b;
 }
 
 .spec {
@@ -80,16 +82,16 @@ h1 {
 
 .spec.failed, .spec.passed, .spec.passed-skipped, .spec.failed-skipped {
   padding-bottom: 5px;
-  border: 1px solid gray;
+  border: 1px solid #2b062b;
 }
 
 .spec.failed, .spec.failed-skipped {
-  background-color: #fbb;
+  background-color: #700c0c;
   border-color: red;
 }
 
 .spec.passed, .spec.passed-skipped {
-  background-color: #bfb;
+  background-color: #075207;
   border-color: green;
 }
 
@@ -99,13 +101,13 @@ h1 {
 
 .errorMessage {
   font-family: "Menlo", "Monaco", "Andale Mono", "Courier New", "Courier", sans-serif; 
-  color: #055;
+  color: #fff;
   white-space: pre;
   padding: .2em 1em;
   margin-left: 10px;
   margin-right: 5px;
   margin-bottom: 10px;
-  background: #eef;
+  background: #2b062b;
 }
 
 .meditate {
@@ -113,17 +115,17 @@ h1 {
 }
 
 .passed {
-  background-color: #cfc;
+  background-color: #0b550b;
   display: none;
 }
 
 .failed {
-  background-color: #fbb;
+  background-color: #5f0d0d;
   display: block;
 }
 
 .passed-skipped, .failed-skipped {
-   display: none;
+  display: none;
 }   
 
 .resultMessage span.result {
@@ -190,11 +192,11 @@ h1 {
 }
 
 .key {
-  color: #077;
+  color: #71f8f8;
 }
 
 .value {
-  color: #444;
+  color: #d8d8d8;
 }
 
 .description {
@@ -202,9 +204,10 @@ h1 {
 }
 
 .enlightenment-passed {
-  color: #990;
+  color: #7beea1;
   font-weight: bold;
 }
 .enlightenment-failed {
-  color: #550;
+  background-color: #5f0d0d;
+  color: #fff;
 }
