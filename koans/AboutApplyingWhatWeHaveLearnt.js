@@ -39,9 +39,15 @@ describe("About Applying What We Have Learnt", function() {
 
       var productsICanEat = [];
 
+      productsICanEat = _(products)
+      .filter(function(x) {return x.containsNuts == false})
+      .filter(function(x) {
+        return _(x.ingredients).any(function(x) { return x === 'mushrooms' })});
+      console.log(productsICanEat);
+
       /* solve using filter() & all() / any() */
 
-      expect(productsICanEat.length).toBe(0);
+      expect(productsICanEat.length).toBe(2);
   });
 
   /*********************************************************************************/
@@ -93,7 +99,6 @@ describe("About Applying What We Have Learnt", function() {
       })
       .flatten()
       .reduce((count, i) => (ingredientCount[i] = ingredientCount[i] || 0 + 1));
-    console.log(ingredientCount);
     /* chain() together map(), flatten() and reduce() */
 
 
