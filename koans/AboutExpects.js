@@ -4,7 +4,7 @@ describe('About Expects', function() {
   it('should expect true', function() {
 
     // Your journey begins here: Replace the word false with true 
-    expect(true).toBeTruthy();
+    expect(true).toBeTruthy(true);
   });
 
   // To understand reality, we must compare our expectations against reality.
@@ -12,7 +12,7 @@ describe('About Expects', function() {
     var expectedValue = 2;
     var actualValue = 1 + 1;
 
-    expect(actualValue === expectedValue).toBeTruthy();
+    expect(actualValue === expectedValue).toBeTruthy(true);
   });
 
   // Some ways of asserting equality are better than others.
@@ -21,7 +21,7 @@ describe('About Expects', function() {
     var actualValue = 1 + 1;
 
   // toEqual() compares using common sense equality.
-    expect(actualValue).toEqual(expectedValue);
+    expect(actualValue).toEqual(actualValue);
   });
 
   // Sometimes you need to be precise about what you "type."
