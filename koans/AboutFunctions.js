@@ -6,7 +6,7 @@ describe("About Functions", function() {
       return a + b;
     }
 
-    expect(add(1, 2)).toBe(FILL_ME_IN);
+    //expect(add(1, 2)).toBe(FILL_ME_IN);
     expect(add(1, 2)).toBe(3);
   });
 
@@ -22,10 +22,10 @@ describe("About Functions", function() {
       return message;
     }
 
-    expect(getMessage()).toBe(FILL_ME_IN);
-    expect(overrideMessage()).toBe(FILL_ME_IN);
-    expect(message).toBe(FILL_ME_IN);
-    
+    //expect(getMessage()).toBe(FILL_ME_IN);
+    //expect(overrideMessage()).toBe(FILL_ME_IN);
+    //expect(message).toBe(FILL_ME_IN);
+
     expect(getMessage()).toBe(message);
     expect(overrideMessage()).toBe(message);
     expect(message).toBe("Inner");
@@ -40,7 +40,7 @@ describe("About Functions", function() {
       }
       return childfunction();
     }
-    expect(parentfunction()).toBe(FILL_ME_IN);
+    //expect(parentfunction()).toBe(FILL_ME_IN);
     expect(parentfunction()).toBe("local");
   });
 
@@ -58,8 +58,8 @@ describe("About Functions", function() {
     var mysteryFunction3 = makeMysteryFunction(3);
     var mysteryFunction5 = makeMysteryFunction(5);
 
-    expect(mysteryFunction3(10) + mysteryFunction5(5)).toBe(FILL_ME_IN);
-    expect(mysteryFunction3(10) + mysteryFunction5(5)).toBe(15);
+    //expect(mysteryFunction3(10) + mysteryFunction5(5)).toBe(FILL_ME_IN);
+    expect(mysteryFunction3(10) + mysteryFunction5(5)).toBe(23);
   });
 
   it("should allow extra function arguments", function () {
@@ -75,8 +75,8 @@ describe("About Functions", function() {
       return secondArg;
     }
 
-    expect(returnSecondArg("only give first arg")).toBe(FILL_ME_IN);
-    expect(returnSecondArg("only give first arg")).toBe("second");
+    //expect(returnSecondArg("only give first arg")).toBe(FILL_ME_IN);
+    expect(returnSecondArg("only give first arg")).toBe(undefined));
 
     function returnAllArgs() {
       var argsArray = [];
@@ -86,7 +86,7 @@ describe("About Functions", function() {
       return argsArray.join(",");
     }
 
-    expect(returnAllArgs("first", "second", "third")).toBe(FILL_ME_IN);
+    //expect(returnAllArgs("first", "second", "third")).toBe(FILL_ME_IN);
     expect(returnAllArgs("first", "second", "third")).toBe("first,second,third");
   });
 
@@ -101,11 +101,11 @@ describe("About Functions", function() {
     };
 
     var praiseSinger = { givePraise: appendRules };
-    expect(praiseSinger.givePraise("John")).toBe(FILL_ME_IN);
+    //expect(praiseSinger.givePraise("John")).toBe(FILL_ME_IN);
     expect(praiseSinger.givePraise("John")).toBe("John rules!");
 
     praiseSinger.givePraise = appendDoubleRules;
-    expect(praiseSinger.givePraise("Mary")).toBe(FILL_ME_IN);
+    //expect(praiseSinger.givePraise("Mary")).toBe(FILL_ME_IN);
     expect(praiseSinger.givePraise("Mary")).toBe("Mary totally rules!");
 
   });
