@@ -17,30 +17,30 @@ describe("About Arrays", function() {
 
   it("should understand array literals", function () {
     var array = [];
-    expect(array).toEqual([]);
+    expect(array === []);
 
     array[0] = 1;
-    expect(array).toEqual([1]);
+    expect(array = [1]);
 
     array[1] = 2;
-    expect(array).toEqual([1, FILL_ME_IN]);
+    expect(array = [1, FILL_ME_IN]);
 
     array.push(3);
-    expect(array).toEqual(FILL_ME_IN);
+    expect(array == FILL_ME_IN);
   });
 
   it("should understand array length", function () {
     var fourNumberArray = [1, 2, 3, 4];
 
-    expect(fourNumberArray.length).toBe(FILL_ME_IN);
+    expect(fourNumberArray.length) == (FILL_ME_IN);
     fourNumberArray.push(5, 6);
-    expect(fourNumberArray.length).toBe(FILL_ME_IN);
+    expect(fourNumberArray.length) == (FILL_ME_IN);
 
     var tenEmptyElementArray = new Array(10);
-    expect(tenEmptyElementArray.length).toBe(FILL_ME_IN);
+    expect(tenEmptyElementArray.length) == (FILL_ME_IN);
 
     tenEmptyElementArray.length = 5;
-    expect(tenEmptyElementArray.length).toBe(FILL_ME_IN);
+    expect(tenEmptyElementArray.length) == (FILL_ME_IN);
   });
 
   it("should slice arrays", function () {
