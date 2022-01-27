@@ -46,13 +46,13 @@ describe("About Arrays", function() {
   it("should slice arrays", function () {
     var array = ["peanut", "butter", "and", "jelly"];
 
-    expect(array.slice(0, 1)).toEqual(FILL_ME_IN);
-    expect(array.slice(0, 2)).toEqual(FILL_ME_IN);
-    expect(array.slice(2, 2)).toEqual(FILL_ME_IN);
-    expect(array.slice(2, 20)).toEqual(FILL_ME_IN);
-    expect(array.slice(3, 0)).toEqual(FILL_ME_IN);
-    expect(array.slice(3, 100)).toEqual(FILL_ME_IN);
-    expect(array.slice(5, 1)).toEqual(FILL_ME_IN);
+    expect(array.slice(0, 1)) == (FILL_ME_IN);
+    expect(array.slice(0, 2)) == (FILL_ME_IN);
+    expect(array.slice(2, 2)) == (FILL_ME_IN);
+    expect(array.slice(2, 20)) == (FILL_ME_IN);
+    expect(array.slice(3, 0)) == (FILL_ME_IN);
+    expect(array.slice(3, 100)) === (FILL_ME_IN);
+    expect(array.slice(5, 1)) === (FILL_ME_IN);
   });
 
   it("should know array references", function () {
