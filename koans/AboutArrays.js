@@ -81,7 +81,7 @@ describe("About Arrays", function() {
 
     var poppedValue = array.pop();
     expect(poppedValue).toBe(3);
-    expect(array).toEqual(FILL_ME_IN);
+    expect(array).toEqual([1,2]);
   });
 
   it("should know about shifting arrays", function () {
