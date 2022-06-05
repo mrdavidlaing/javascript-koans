@@ -23,7 +23,7 @@ describe("About Functions", function() {
 
     expect(getMessage()).toBe('Outer');
     expect(overrideMessage()).toBe('Inner');
-    expect(message).toBe(FILL_ME_IN);
+    expect(message).toBe('Inner');
   });
 
   it("should have lexical scoping", function () {
