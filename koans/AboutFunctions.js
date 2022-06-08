@@ -91,7 +91,7 @@ describe("About Functions", function() {
     };
 
     var praiseSinger = { givePraise: appendRules };
-    expect(praiseSinger.givePraise("John")).toBe(FILL_ME_IN);
+    expect(praiseSinger.givePraise("John")).toBe('John rules!');
 
     praiseSinger.givePraise = appendDoubleRules;
     expect(praiseSinger.givePraise("Mary")).toBe(FILL_ME_IN);
