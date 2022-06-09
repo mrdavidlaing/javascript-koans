@@ -8,7 +8,7 @@ describe("About Objects", function () {
     });
 
     it("should confirm objects are collections of properties", function () {
-      expect(megalomaniac.mastermind).toBe(FILL_ME_IN);
+      expect(megalomaniac.mastermind).toBe('Joker');
     });
 
     it("should confirm that properties are case sensitive", function () {
