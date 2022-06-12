@@ -79,7 +79,7 @@ describe("About Objects", function () {
     expect("secretary" in megalomaniac).toBe(false);
 
     megalomaniac.secretary = "Agent Smith";
-    expect("secretary" in megalomaniac).toBe(FILL_ME_IN);
+    expect("secretary" in megalomaniac).toBe(true);
 
     delete megalomaniac.henchman;
     expect("henchman" in megalomaniac).toBe(FILL_ME_IN);
