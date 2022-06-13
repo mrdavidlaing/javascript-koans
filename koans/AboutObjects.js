@@ -96,7 +96,7 @@ describe("About Objects", function () {
       var colouredCircle = new Circle(5);
       colouredCircle.colour = "red";
 
-      expect(simpleCircle.colour).toBe(FILL_ME_IN);
+      expect(simpleCircle.colour).toBe(false);
       expect(colouredCircle.colour).toBe(FILL_ME_IN);
 
       Circle.prototype.describe = function () {
