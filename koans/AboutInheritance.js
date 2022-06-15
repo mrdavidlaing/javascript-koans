@@ -36,7 +36,7 @@ describe('About inheritance', function () {
     expect(this.swedishChef.age).toEqual(FILL_ME_IN);
     expect(this.swedishChef.hobby).toEqual(FILL_ME_IN);
   });
-
+  aaa;
   it('should set constructor parameters on the derived object', function () {
     expect(this.swedishChef.mood).toEqual(FILL_ME_IN);
   });
