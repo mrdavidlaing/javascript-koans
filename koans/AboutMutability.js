@@ -30,7 +30,7 @@ describe("About Mutability", function() {
     };
 
     var aPerson = new Person ("John", "Smith");
-    expect(aPerson.getFullName()).toBe(FILL_ME_IN);
+    expect(aPerson.getFullName()).toBe('John Smith');
 
     aPerson.getFullName = function () {
       return this.lastname + ", " + this.firstname;
