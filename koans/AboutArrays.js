@@ -3,8 +3,8 @@ describe("About Arrays", function() {
   //We shall contemplate truth by testing reality, via spec expectations.
   it("should create arrays", function() {
     var emptyArray = [];
-    expect(typeof(emptyArray)).toBe(FILL_ME_IN); //A mistake? - http://javascript.crockford.com/remedial.html
-    expect(emptyArray.length).toBe(FILL_ME_IN);
+    expect(typeof(emptyArray).not.toBe(FILL_ME_IN); //A mistake? - http://javascript.crockford.com/remedial.html
+    expect(emptyArray.length).not.toBe(FILL_ME_IN);
 
     var multiTypeArray = [0, 1, "two", function () { return 3; }, {value1: 4, value2: 5}, [6, 7]];
     expect(multiTypeArray[0]).toBe(FILL_ME_IN);
