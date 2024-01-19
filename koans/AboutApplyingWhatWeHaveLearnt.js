@@ -126,9 +126,31 @@ describe("About Applying What We Have Learnt", function () {
 
 
     it("should find the largest palindrome made from the product of two 3 digit numbers", function () {
-        function isPoly() {
-
+        function isPoly(number) {
+            let strNumber = `${number}`
+            let coefficient = strNumber.length % 2 === 0 ? 0 : 1;
+            let strNumber1 = strNumber.slice(0, (strNumber.length - coefficient) / 2);
+            let strNumber2 = strNumber
+                .slice((strNumber.length + coefficient) / 2, strNumber.length)
+                .split("")
+                .reverse()
+                .join("");
+            return strNumber1 === strNumber2;
         }
+
+        function biggestPoly() {
+            let result = 1;
+            for(let i=999;i>99;i--){
+                for(let j=i-1;j>99;j--){
+                    if(isPoly(i*j) && result<(i*j)){
+                        result = i*j;
+                    }
+                }
+            }
+            return result;
+        }
+
+        expect((biggestPoly())).toBe(906609);
     });
 
     /*********************************************************************************/
