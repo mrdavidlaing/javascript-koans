@@ -153,14 +153,39 @@ describe("About Applying What We Have Learnt", function () {
         expect((biggestPoly())).toBe(906609);
     });
 
+
+    it("should find the smallest number divisible by each of the numbers 1 to 20", function () {
+
+        function isDividedBy(rangeStart, rangeEnd, number) {
+            console.log(`number: ${number}`);
+            let result = true;
+            _(_.range(rangeStart, rangeEnd+1)).forEach(function (factor) {
+                     if(number % factor !== 0) {
+                         console.log(factor);
+                         result = false;
+                     }
+                 });
+            return result;
+        }
+
+        function gcd(number1, number2) {
+            return number2 === 0 ? number1 : gcd(number2, number1%number2);
+        }
+        function lcm(number1, number2) {
+            return number1/gcd(number1, number2)*number2;
+        }
+
+        let expectedNumber = 2;
+        for(let i=2;i<=20;i++){
+            expectedNumber = lcm(expectedNumber, i);
+        }
+
+        expect(isDividedBy(1, 20, expectedNumber)).toBe(true);
+    });
+
     /*********************************************************************************/
     /* UNCOMMENT FOR EXTRA CREDIT */
     /*
-    it("should find the smallest number divisible by each of the numbers 1 to 20", function () {
-
-
-    });
-
     it("should find the difference between the sum of the squares and the square of the sums", function () {
 
     });
