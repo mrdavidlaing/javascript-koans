@@ -155,13 +155,10 @@ describe("About Applying What We Have Learnt", function () {
 
 
     it("should find the smallest number divisible by each of the numbers 1 to 20", function () {
-
         function isDividedBy(rangeStart, rangeEnd, number) {
-            console.log(`number: ${number}`);
             let result = true;
             _(_.range(rangeStart, rangeEnd+1)).forEach(function (factor) {
                      if(number % factor !== 0) {
-                         console.log(factor);
                          result = false;
                      }
                  });
@@ -183,15 +180,76 @@ describe("About Applying What We Have Learnt", function () {
         expect(isDividedBy(1, 20, expectedNumber)).toBe(true);
     });
 
-    /*********************************************************************************/
-    /* UNCOMMENT FOR EXTRA CREDIT */
-    /*
-    it("should find the difference between the sum of the squares and the square of the sums", function () {
 
+    it("should find the difference between the sum of the squares and the square of the sums", function () {
+        function diff() {
+            let sumOfSquare = 0;
+            let squareOfSums = 0;
+            for(let i=0; i< arguments.length; i++){
+                sumOfSquare += arguments[i]*arguments[i];
+                squareOfSums += arguments[i];
+            }
+            squareOfSums *= squareOfSums;
+            return squareOfSums-sumOfSquare;
+        }
+
+        function mathDiff(n) {
+            return Math.abs((3*n*n + 2*n)*(1-n*n)/12);
+        }
+
+        expect(diff(1,2,3,4,5)).toBe(mathDiff(5));
     });
 
     it("should find the 10001st prime", function () {
+        function isPrime(number) {
+            for(let i= number-1; i>1; i--){
+                if(number%i===0) return false;
+            }
+            return true;
+        }
+        function prime(limit) {
+            let result = [];
+            let number = 2;
+            while (result.length<limit) {
+                if(isPrime(number)){
+                    result.push(number);
+                }
+                number++;
+            }
+            return result;
+        }
 
+        function eratosthenes(n) {
+            // Eratosthenes algorithm to find all primes under n
+            let array = [], upperLimit = Math.sqrt(n), output = [];
+
+            // Make an array from 2 to (n - 1)
+            for (let i = 0; i < n; i++) {
+                array.push(true);
+            }
+
+            // Remove multiples of primes starting from 2, 3, 5,...
+            for (let i = 2; i <= upperLimit; i++) {
+                if (array[i]) {
+                    for (let j = i * i; j < n; j += i) {
+                        array[j] = false;
+                    }
+                }
+            }
+
+            // All array[i] set to true are primes
+            for (let i = 2; i < n; i++) {
+                if(array[i]) {
+                    output.push(i);
+                }
+            }
+
+            return output;
+        }
+
+        let simple = prime(10001);
+        let eraAlg = eratosthenes(105000);
+
+        expect(simple[10000]).toBe(eraAlg[10000]);
     });
-    */
 });
