@@ -46,7 +46,7 @@ describe("About Applying What We Have Learnt", function() {
             });
         });
 
-        expect(productsICanEat.length).toBe(FILL_ME_IN);
+        expect(productsICanEat.length).toBe(1);
     });
 
     /*********************************************************************************/
