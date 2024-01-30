@@ -253,15 +253,15 @@ describe("About Applying What We Have Learnt", function() {
   });
 
   it("should find the 10001st prime", function () {
-    function get10001stPrime(simpleIndex) {
-        let i = 0;
+    function getPrime(simpleIndex) {
+        let i = 1;
         let iteration = 0;
         while (true) {
             iteration++;
-            if (i === simpleIndex) {
-                return iteration;
-            }
             if (isSimpleNumber(iteration)) {
+                if (i === simpleIndex) {
+                    return iteration;
+                }
                 i++;
             }
         }
@@ -280,6 +280,6 @@ describe("About Applying What We Have Learnt", function() {
         return true;
     }
 
-    expect(get10001stPrime(10001)).toBe(104744);
+    expect(getPrime(10001)).toBe(104743);
   });
 });
